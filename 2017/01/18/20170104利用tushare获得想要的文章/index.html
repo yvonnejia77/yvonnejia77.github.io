@@ -3,14 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: selfintro | Yvonne&#39;s Blog</title>
+  <title>利用tushare获得想要的文章 | Yvonne&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yvonne's Blog">
-<meta property="og:url" content="https://yvonne.github.io/tags/selfintro/index.html">
+  <meta name="description" content="描述：Tushare是一个免费、开源的财经数据接口包。利用其可得到股票分类数据、基本面数据、宏观经济数据以及电影票房等数据。网址链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用tushare获得想要的文章">
+<meta property="og:url" content="https://yvonne.github.io/2017/01/18/20170104利用tushare获得想要的文章/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
+<meta property="og:description" content="描述：Tushare是一个免费、开源的财经数据接口包。利用其可得到股票分类数据、基本面数据、宏观经济数据以及电影票房等数据。网址链接">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/sdifia5amd2xak5sduwmd5cp/1401481286740_.jpg">
+<meta property="og:updated_time" content="2017-01-04T13:11:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yvonne's Blog">
+<meta name="twitter:title" content="利用tushare获得想要的文章">
+<meta name="twitter:description" content="描述：Tushare是一个免费、开源的财经数据接口包。利用其可得到股票分类数据、基本面数据、宏观经济数据以及电影票房等数据。网址链接">
+<meta name="twitter:image" content="http://static.zybuluo.com/windkl/sdifia5amd2xak5sduwmd5cp/1401481286740_.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Yvonne&#39;s Blog" type="application/atom+xml">
   
@@ -59,39 +65,81 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/18/20170104self introduction/" class="archive-article-date">
-  <time datetime="2017-01-18T13:57:40.764Z" itemprop="datePublished">Jan 18</time>
+        <section id="main"><article id="post-20170104利用tushare获得想要的文章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/18/20170104利用tushare获得想要的文章/" class="article-date">
+  <time datetime="2017-01-18T13:57:40.787Z" itemprop="datePublished">2017-01-18</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/study/">study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/18/20170104self introduction/">Hello world</a>
+    <h1 class="article-title" itemprop="name">
+      利用tushare获得想要的文章
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h2><p>Tushare是一个免费、开源的财经数据接口包。<br>利用其可得到股票分类数据、基本面数据、宏观经济数据以及电影票房等数据。<br><a href="http://tushare.org/index.html" target="_blank" rel="external">网址链接</a><br><a id="more"></a></p>
+<h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><p>Tushare的安装以Python/pandas/lxml为前提<br>可使用PIP方法<br>在MAC的环境下需要sudo给予权限<br>具体：（以MAC为例）</p>
+<pre><code>sudo pip install pandas ...
+</code></pre><p>输入密码给予权限</p>
+<pre><code>sudo pip install lxml （步骤同上）
+......
+</code></pre><p>（步骤同上）<br>    sudo pip install tushare<br>    …（步骤同上）</p>
+<p>安装完成</p>
+<h2 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h2><p>点开documentation,直接使用里面的代码以获得资料<br>以获取每日电影票房数据为例：</p>
+<pre><code>import tushare as ts
+df = ts.day_cinema() #取上一日全国影院票房排行数据
+#df = ts.day_cinema(&apos;2015-12-24&apos;) #取指定日期的数据
+df.head(10)
+</code></pre><p>则可得到<img src="http://static.zybuluo.com/windkl/sdifia5amd2xak5sduwmd5cp/1401481286740_.jpg" alt="1401481286740_.jpg-68.9kB">等数据</p>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>此时可接下来做描述性统计或者回归分析<br>再用seaborn画图<br>若想得到更多的数据<br>可将<code>df.head(10)</code>括号里的数字改为其他数据</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yvonne.github.io/2017/01/18/20170104利用tushare获得想要的文章/" data-id="ciy31shxs0004mgrrljgmuxz7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/finance/">finance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tushare/">tushare</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/18/20170104豆瓣电影可视化分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          豆瓣电影可视化分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/18/20170104中国电影业票房影响因素回归分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

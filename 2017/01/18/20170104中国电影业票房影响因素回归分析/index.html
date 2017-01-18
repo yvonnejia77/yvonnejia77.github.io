@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Yvonne&#39;s Blog</title>
+  <title>豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析 | Yvonne&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yvonne's Blog">
-<meta property="og:url" content="https://yvonne.github.io/index.html">
+  <meta name="description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析">
+<meta property="og:url" content="https://yvonne.github.io/2017/01/18/20170104中国电影业票房影响因素回归分析/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
+<meta property="og:description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/j0g56mrr51m23ieh18edkeqc/%E5%9B%BE%E7%89%87%201.png">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/etnr435r1yv0u2mbjc2p8v4d/WechatIMG163.jpeg">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/5w9s61apnw0ztc52c16qzdvp/WechatIMG164.jpeg">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/iy1509mcjypx2qov7pp5340i/WechatIMG165.jpeg">
+<meta property="og:updated_time" content="2017-01-04T13:32:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yvonne's Blog">
+<meta name="twitter:title" content="豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析">
+<meta name="twitter:description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
+<meta name="twitter:image" content="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg">
   
     <link rel="alternate" href="/atom.xml" title="Yvonne&#39;s Blog" type="application/atom+xml">
   
@@ -59,103 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-20170104豆瓣电影可视化分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/18/20170104豆瓣电影可视化分析/" class="article-date">
-  <time datetime="2017-01-18T13:57:40.798Z" itemprop="datePublished">2017-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/study/">study</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/18/20170104豆瓣电影可视化分析/">豆瓣电影可视化分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文以python为工具，对于豆瓣电影做了一定的可视化分析<br>具体的代码以及返回结果附在文末<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/18/20170104豆瓣电影可视化分析/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yvonne.github.io/2017/01/18/20170104豆瓣电影可视化分析/" data-id="ciy31shxu0005mgrrxvmzmz2o" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/movies/">movies</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tushare/">tushare</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20170104利用tushare获得想要的文章" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/18/20170104利用tushare获得想要的文章/" class="article-date">
-  <time datetime="2017-01-18T13:57:40.787Z" itemprop="datePublished">2017-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/study/">study</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/18/20170104利用tushare获得想要的文章/">利用tushare获得想要的文章</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h2><p>Tushare是一个免费、开源的财经数据接口包。<br>利用其可得到股票分类数据、基本面数据、宏观经济数据以及电影票房等数据。<br><a href="http://tushare.org/index.html">网址链接</a><br>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/18/20170104利用tushare获得想要的文章/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yvonne.github.io/2017/01/18/20170104利用tushare获得想要的文章/" data-id="ciy31shxs0004mgrrljgmuxz7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/finance/">finance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tushare/">tushare</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20170104中国电影业票房影响因素回归分析" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-20170104中国电影业票房影响因素回归分析" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/18/20170104中国电影业票房影响因素回归分析/" class="article-date">
   <time datetime="2017-01-18T13:57:40.775Z" itemprop="datePublished">2017-01-18</time>
@@ -172,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/18/20170104中国电影业票房影响因素回归分析/">豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析</a>
+    <h1 class="article-title" itemprop="name">
+      豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析
     </h1>
   
 
@@ -182,12 +96,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/18/20170104中国电影业票房影响因素回归分析/#more">Read More</a>
-          </p>
-        
+<p>本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归<br><a id="more"></a></p>
+<h2 id="背景阐述"><a href="#背景阐述" class="headerlink" title="背景阐述"></a>背景阐述</h2><p>对于电影票房影响因素的分析，国内外已经成果颇丰，内容主要集中于对单部电影票房影响因素的分析。此次我们是从宏观角度探讨中国爆发性增长的电影总票房的影响因素。2002年6月1日，根据《关于改革电影发行放映机制的实施细则》，全国首批30条电影院线正式成立运营，872家影院、1581块银幕开始以全新的市场主体身份参与竞争。我们选取的数据就是院线制改革后的数据，因距今不算太久远，因此样本数量较少，在此仅作简单的回归分析。</p>
+<h2 id="变量选取"><a href="#变量选取" class="headerlink" title="变量选取"></a>变量选取</h2><p>被解释变量——中国电影票房总收入；解释变量：国民收入水平，中国电影产量（以故事片数量替代），银幕数量，居民消费价格指数。</p>
+<h2 id="基于样本数据的统计性描述"><a href="#基于样本数据的统计性描述" class="headerlink" title="基于样本数据的统计性描述"></a>基于样本数据的统计性描述</h2><p><img src="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg" alt="WechatIMG162.jpeg-232.5kB"><br>从上表可以看出，每个变量的标准差都较大，说明14年内增长显著；电影产量的偏度为负，峰度出现在2012年，说明近四年电影产量较2012年下降；其余变量偏度均为正值。<br><img src="http://static.zybuluo.com/windkl/j0g56mrr51m23ieh18edkeqc/%E5%9B%BE%E7%89%87%201.png" alt="图片 1.png-62.2kB"><br>上图是总票房、影院数、银屏数增长率所画的图。可以看出影院和银屏的增长速度从2012年开始放缓；票房在2010-2011年爆炸性增长，影院和银屏在2011-2012年间爆炸性增长；影院和银屏的增长相较票房增长具有滞后性。</p>
+<h2 id="回归分析"><a href="#回归分析" class="headerlink" title="回归分析"></a>回归分析</h2><p>初步设定模型为：ln(Y/X4 )=C1+C2<em>ln(X1/X4)+C3</em>ln(X2)+C4*ln(X3)<br>采用OLS法，利用EViews得到以下结果：<br><img src="http://static.zybuluo.com/windkl/etnr435r1yv0u2mbjc2p8v4d/WechatIMG163.jpeg" alt="WechatIMG163.jpeg-116.5kB"><br>残差分布均匀，说明残差不存在序列自相关。<br><img src="http://static.zybuluo.com/windkl/5w9s61apnw0ztc52c16qzdvp/WechatIMG164.jpeg" alt="WechatIMG164.jpeg-149.2kB"><br>由上表可知Fprob＜0.05，因此整体线性关系显著；判定系数0.994876，说明拟合优度佳；但是Movieproduction这一解释变量未通过t检验，不显著，说明这一解释变量选择不合理，可能存在多重共线性。<br>将数据逐步回归并检验可得：</p>
+<p><img src="http://static.zybuluo.com/windkl/iy1509mcjypx2qov7pp5340i/WechatIMG165.jpeg" alt="WechatIMG165.jpeg-146.4kB"><br>逐步回归结果显示：实际国民收入与银幕数对电影票房的线性影响显著，具体表现为实际国民收入水平每变增加1%，实际电影票房收入就会增加1.299804%，电影银幕数量每增加1%，实际电影票房收入就会增加0.569670%。而中国电影产量对票房影响很小，原因可能是增加的电影由于审批制度、本身质量问题、缺乏营销宣传、进口分账片势力强大等缺乏竞争力的少，因此对票房的增长没有什么贡献。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -199,59 +114,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-20170104self introduction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/18/20170104self introduction/" class="article-date">
-  <time datetime="2017-01-18T13:57:40.764Z" itemprop="datePublished">2017-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/sthaboutmyself/">sthaboutmyself</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/01/18/20170104利用tushare获得想要的文章/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          利用tushare获得想要的文章
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/18/20170104self introduction/">Hello world</a>
-    </h1>
   
+    <a href="/2017/01/18/20170104self introduction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello world</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Greetings from China</p>
-<p>This is <strong>Yvonne</strong></p>
-<p>A girl who is always passionate about the world and ready to share something with your guys.<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/18/20170104self introduction/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yvonne.github.io/2017/01/18/20170104self introduction/" data-id="ciy31shxd0001mgrr9f7xzxnk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/selfintro/">selfintro</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         

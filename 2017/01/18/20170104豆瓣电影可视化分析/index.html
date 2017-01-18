@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>豆瓣电影可视化分析 | Yvonne&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文以python为工具，对于豆瓣电影做了一定的可视化分析具体的代码以及返回结果附在文末">
+<meta property="og:type" content="article">
+<meta property="og:title" content="豆瓣电影可视化分析">
+<meta property="og:url" content="https://yvonne.github.io/2017/01/18/20170104豆瓣电影可视化分析/index.html">
+<meta property="og:site_name" content="Yvonne's Blog">
+<meta property="og:description" content="本文以python为工具，对于豆瓣电影做了一定的可视化分析具体的代码以及返回结果附在文末">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/4gwy98696cvrr9kj9gzphuvh/WechatIMG149.jpeg">
+<meta property="og:image" content="http://static.zybuluo.com/windkl/iarvkcqbzrn1t3glghtpsz3d/WechatIMG151.jpeg">
+<meta property="og:updated_time" content="2017-01-04T13:24:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="豆瓣电影可视化分析">
+<meta name="twitter:description" content="本文以python为工具，对于豆瓣电影做了一定的可视化分析具体的代码以及返回结果附在文末">
+<meta name="twitter:image" content="http://static.zybuluo.com/windkl/4gwy98696cvrr9kj9gzphuvh/WechatIMG149.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Yvonne&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Yvonne&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yvonne.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20170104豆瓣电影可视化分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/18/20170104豆瓣电影可视化分析/" class="article-date">
+  <time datetime="2017-01-18T13:57:40.798Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/study/">study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      豆瓣电影可视化分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文以python为工具，对于豆瓣电影做了一定的可视化分析<br>具体的代码以及返回结果附在文末<br><a id="more"></a></p>
+<h2 id="数据规模"><a href="#数据规模" class="headerlink" title="数据规模"></a>数据规模</h2><p>为了使得数据有代表性，本次分析共选取了从1902-2016共114年间的共一万五千多条数据。</p>
+<h2 id="电影评分总体趋势"><a href="#电影评分总体趋势" class="headerlink" title="电影评分总体趋势"></a>电影评分总体趋势</h2><p>本文对每一年豆瓣的电影的评分求了平均值，并且取了最近三十年的数据画了一个趋势图：<br><img src="http://static.zybuluo.com/windkl/4gwy98696cvrr9kj9gzphuvh/WechatIMG149.jpeg" alt="WechatIMG149.jpeg-51.9kB"><br>从图中我们可以看出，剔除极端值以后，近三十年来，电影事业总体发展较为平稳，偶有波动，平均电影分数稳定在7-8之间，这是一个比较高的水准。</p>
+<h2 id="电影类型介绍"><a href="#电影类型介绍" class="headerlink" title="电影类型介绍"></a>电影类型介绍</h2><p>本文对15000多部电影进行了归类，结果如下饼图：<br>（为方便统计，将总量小于20的电影归类于其他）<br><img src="http://static.zybuluo.com/windkl/iarvkcqbzrn1t3glghtpsz3d/WechatIMG151.jpeg" alt="WechatIMG151.jpeg-54.4kB"><br>可以看出目前电影市场上有着各种类型的电影片子，其中最多的是剧情片，其次是喜剧片，动作、记录、犯罪等。</p>
+<h2 id="烂片、好片的比例"><a href="#烂片、好片的比例" class="headerlink" title="烂片、好片的比例"></a>烂片、好片的比例</h2><p>定义豆瓣电影评分大于9分的算好电影，小于5分的算坏电影<br>在统计的片子里面大约有5.73%的电影评分小于5分<br>大约有304部片子评分大于9分，占比约0.02%<br>说明电影行业发展参差不齐，出现了一些为了票房而滥竽充数之作，也侧面说明了观众对于电影评分的标准比较严格</p>
+<h2 id="评分最高、最低的电影"><a href="#评分最高、最低的电影" class="headerlink" title="评分最高、最低的电影"></a>评分最高、最低的电影</h2><p>根据结果，评分最高的电影是：神秘博士：DT的视频日志：最后的日子，9.7分，属于纪录片<br>评分最低的电影是：嫁给大山的女人，2.1分，属于剧情片</p>
+<h2 id="评论最多的电影"><a href="#评论最多的电影" class="headerlink" title="评论最多的电影"></a>评论最多的电影</h2><p>根据结果，评论最多的电影同评分最高的电影，是：神秘博士：DT的视频日志：最后的日子</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> csv</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBadMovie</span><span class="params">(score)</span>:</span></div><div class="line">    <span class="keyword">if</span> score&lt;<span class="number">5</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isGoodMovie</span><span class="params">(score)</span>:</span></div><div class="line">    <span class="keyword">if</span> score &gt;= <span class="number">9</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">douban</span><span class="params">()</span>:</span></div><div class="line">    csvfile = file(<span class="string">'movie1.csv'</span>, <span class="string">'rb'</span>)</div><div class="line">    reader = csv.reader(csvfile)</div><div class="line">    rating = []</div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> reader:</div><div class="line">        rating.append(line)</div><div class="line">    <span class="keyword">return</span> rating</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">myCmp</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="keyword">if</span> x[f[<span class="string">"rateing"</span>]]&lt;y[f[<span class="string">"rateing"</span>]]:</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span></div><div class="line">    <span class="keyword">elif</span> x[f[<span class="string">"rateing"</span>]]&gt;y[f[<span class="string">"rateing"</span>]]:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">myCmp2</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="keyword">if</span> x[f[<span class="string">"reviews"</span>]] &lt; y[f[<span class="string">"reviews"</span>]]:</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span></div><div class="line">    <span class="keyword">elif</span> x[f[<span class="string">"reviews"</span>]] &gt; y[f[<span class="string">"reviews"</span>]]:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line"></div><div class="line">f=&#123;<span class="string">"IMDB"</span>:<span class="number">0</span>,<span class="string">"title"</span>:<span class="number">1</span>,<span class="string">"rateing"</span>:<span class="number">2</span>,<span class="string">"rank"</span>:<span class="number">3</span>,<span class="string">"is_playable"</span>:<span class="number">4</span>,<span class="string">"types"</span>:<span class="number">5</span>,<span class="string">"type"</span>:<span class="number">6</span>,<span class="string">"regions"</span>:<span class="number">7</span>,<span class="string">"release_date"</span>:<span class="number">8</span>,</div><div class="line">   <span class="string">"year"</span>:<span class="number">9</span>,<span class="string">"actor_count"</span>:<span class="number">10</span>,<span class="string">"vote_count"</span>:<span class="number">11</span>,<span class="string">"actors"</span>:<span class="number">12</span>,<span class="string">"typeid"</span>:<span class="number">13</span>,<span class="string">"daoyan"</span>:<span class="number">14</span>,<span class="string">"bianju"</span>:<span class="number">15</span>,<span class="string">"runtime"</span>:<span class="number">16</span>,</div><div class="line">   <span class="string">"star1"</span>:<span class="number">17</span>,<span class="string">"star2"</span>:<span class="number">18</span>,<span class="string">"star3"</span>:<span class="number">19</span>,<span class="string">"star4"</span>:<span class="number">20</span>,<span class="string">"star5"</span>:<span class="number">21</span>,<span class="string">"reviews"</span>:<span class="number">22</span>&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    fw = open(<span class="string">'result.txt'</span>,<span class="string">'w'</span>)</div><div class="line">    type = sys.getfilesystemencoding()</div><div class="line"></div><div class="line">    <span class="comment"># m[1]IMBD m[2]title m[3]rateing m[4]type m[5]release_date m[6]star1 m[7]star2 m[8]star3 m[9]star4 m[10]star5 m[11]reviews</span></div><div class="line"></div><div class="line">    movies = douban()</div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># for item in range(1,10):</span></div><div class="line">    <span class="comment">#     print movies[item]</span></div><div class="line"></div><div class="line">    <span class="keyword">del</span> movies[<span class="number">0</span>]</div><div class="line"></div><div class="line">    imdb = []</div><div class="line">    title = []</div><div class="line">    scores = []</div><div class="line">    types = []</div><div class="line">    years = []</div><div class="line">    numOfComment = []</div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> movies:</div><div class="line">        imdb.append(item[f[<span class="string">"IMDB"</span>]])</div><div class="line">        title.append(item[f[<span class="string">"title"</span>]])</div><div class="line">        scores.append(float(item[f[<span class="string">"rateing"</span>]]))</div><div class="line"></div><div class="line">        types.append(item[f[<span class="string">"type"</span>]])</div><div class="line">        temp= int(item[f[<span class="string">"year"</span>]])</div><div class="line">        years.append(temp)</div><div class="line">        numOfComment.append(item[f[<span class="string">"reviews"</span>]])</div><div class="line"></div><div class="line"><span class="comment">#1</span></div><div class="line">    min = years[<span class="number">0</span>]</div><div class="line">    max = years[<span class="number">0</span>]</div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> years:</div><div class="line">        <span class="keyword">if</span> item == <span class="number">0</span>:</div><div class="line">            <span class="keyword">continue</span></div><div class="line">        <span class="keyword">if</span> item &lt; min:</div><div class="line">            min = item</div><div class="line">        <span class="keyword">if</span> item &gt; max:</div><div class="line">            max = item</div><div class="line"></div><div class="line">    fw.write(<span class="string">"min final:"</span>+ str(min)+<span class="string">"\n"</span>)</div><div class="line">    fw.write(<span class="string">"max final:"</span>+str(max) +<span class="string">"\n"</span>)</div><div class="line">    fw.write(<span class="string">"year period:"</span>+str(max-min)+<span class="string">"\n"</span>)</div><div class="line"></div><div class="line"><span class="comment">#2 x:years y:avgscore</span></div><div class="line">    avgscore = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> year <span class="keyword">in</span> years:</div><div class="line">        temp = []</div><div class="line">        length = len(years)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,length):</div><div class="line">            <span class="keyword">if</span> i == year:</div><div class="line">                temp.append(scores[i])</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(year!= <span class="number">0</span>):</div><div class="line">            avgscore[year]=sum(temp)/len(temp)</div><div class="line"></div><div class="line">    fw.write(str(avgscore)+<span class="string">"\n"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 3 dw</span></div><div class="line">    badMovies=filter(isBadMovie,scores)</div><div class="line">    fw.write(<span class="string">"bad movies:"</span>+str(len(badMovies)/float(len(scores))*<span class="number">100</span>)+<span class="string">"%\n"</span>)</div><div class="line"></div><div class="line"><span class="comment">#4</span></div><div class="line">    type_num=&#123;&#125;</div><div class="line">    length2=len(imdb)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,length2):</div><div class="line">        <span class="keyword">if</span> types[i] <span class="keyword">in</span> type_num:</div><div class="line">            type_num[types[i]]+=<span class="number">1</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            type_num[types[i]]=<span class="number">1</span></div><div class="line"></div><div class="line">    <span class="comment"># fw.write(("num of each type:\n"+str(type_num)+"\n").encode('gb2312'))</span></div><div class="line"></div><div class="line">    fw.write(<span class="string">"num of each type:\n"</span>);</div><div class="line">    <span class="keyword">for</span> k,v <span class="keyword">in</span> type_num.iteritems():</div><div class="line">        fw.write(str(k)+<span class="string">":"</span>+str(v)+<span class="string">"\t"</span>)</div><div class="line">        <span class="comment"># fw.write(":")</span></div><div class="line">        <span class="comment"># fw.write(v)</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#7</span></div><div class="line">    fw.write(<span class="string">"\nnum of movies whose score &gt;= 9:"</span>+str(len(filter(isGoodMovie,scores)))+<span class="string">"\n"</span>)</div><div class="line"></div><div class="line"><span class="comment">#5 6 8</span></div><div class="line">    movies.sort(myCmp)</div><div class="line">    fw.write((<span class="string">"maxscore film :\tIMDB:\t"</span>+str(movies[<span class="number">-1</span>][f[<span class="string">"IMDB"</span>]])+ <span class="string">"\ttitle:"</span>+str(movies[<span class="number">-1</span>][f[<span class="string">"title"</span>]])+<span class="string">"\ttype:"</span>+str(movies[<span class="number">-1</span>][f[<span class="string">"type"</span>]])+<span class="string">"\n"</span>))</div><div class="line">    fw.write((<span class="string">"minscore film :\tIMDB:\t"</span> + str(movies[<span class="number">0</span>][f[<span class="string">"IMDB"</span>]]) + <span class="string">"\ttitle:"</span> + str(</div><div class="line">        movies[<span class="number">0</span>][f[<span class="string">"title"</span>]]) + <span class="string">"\ttype:"</span> + str(movies[<span class="number">0</span>][f[<span class="string">"type"</span>]]) + <span class="string">"\n"</span>))</div><div class="line">    fw.write((<span class="string">"movie with the most comment people film :\tIMDB:\t"</span> + str(movies[<span class="number">-1</span>][f[<span class="string">"IMDB"</span>]]) + <span class="string">"\ttitle:"</span> + str(</div><div class="line">        movies[<span class="number">-1</span>][f[<span class="string">"title"</span>]]) + <span class="string">"\ttype:"</span> + str(movies[<span class="number">-1</span>][f[<span class="string">"type"</span>]]) + <span class="string">"\n"</span>))</div><div class="line"></div><div class="line">fw.close()</div></pre></td></tr></table></figure>
+<h2 id="返回结果："><a href="#返回结果：" class="headerlink" title="返回结果："></a>返回结果：</h2><pre><code>min final:1902
+
+max final:2016
+
+year period:114
+
+平均评分：
+{1902: 6.2, 1903: 6.2, 1904: 5.0, 1905: 7.6, 1906: 6.7, 1907: 7.5, 1908: 6.3, 1911: 7.2, 1912: 6.2, 1914: 7.4, 1915: 7.8, 1916: 6.4, 1918: 7.9, 1919: 6.7, 1920: 7.0, 1921: 6.4, 1922: 8.0, 1923: 8.2, 1924: 7.6, 1925: 9.0, 1926: 8.3, 1927: 6.9, 1928: 7.5, 1929: 8.2, 1930: 7.0, 1931: 8.2, 1932: 7.9, 1933: 7.7, 1934: 5.3, 1935: 9.1, 1936: 7.4, 1937: 7.0, 1938: 8.0, 1939: 7.9, 1940: 7.9, 1941: 6.3, 1942: 6.6, 1943: 3.8, 1944: 8.0, 1945: 7.9, 1946: 6.8, 1947: 8.8, 1948: 7.6, 1949: 8.1, 1950: 7.8, 1951: 7.7, 1952: 7.5, 1953: 6.7, 1954: 7.7, 1955: 8.2, 1956: 6.8, 1957: 7.4, 1958: 8.7, 1959: 7.4, 1960: 6.7, 1961: 8.6, 1962: 6.9, 1963: 6.8, 1964: 5.4, 1965: 8.1, 1966: 7.8, 1967: 6.4, 1968: 8.7, 1969: 6.4, 1970: 4.9, 1971: 6.7, 1972: 5.7, 1973: 6.7, 1974: 8.0, 1975: 8.3, 1976: 7.6, 1977: 7.1, 1978: 7.1, 1979: 7.0, 1980: 7.5, 1981: 6.4, 1982: 6.4, 1983: 6.8, 1984: 6.2, 1985: 7.7, 1986: 6.1, 1987: 2.8, 1988: 2.8, 1989: 2.8, 1990: 7.6, 1991: 6.4, 1992: 6.4, 1993: 7.3, 1994: 7.9, 1995: 8.8, 1996: 7.0, 1997: 8.3, 1998: 8.5, 1999: 7.4, 2000: 7.7, 2001: 8.3, 2002: 6.5, 2003: 5.8, 2004: 6.6, 2005: 6.6, 2006: 7.1, 2007: 8.7, 2008: 7.4, 2009: 5.4, 2010: 7.4, 2011: 7.9, 2012: 8.3, 2013: 7.8, 2014: 7.9, 2015: 8.3, 2016: 8.2}
+
+bad movies:5.73028586312%
+
+num of each type:
+音乐:21    同性:13    传记:327    短片:241    黑色电影:4    运动:7    纪录片:667    西部:16    惊悚:264    科幻:156    家庭:103    历史:44    武侠:4    悬疑:205    Adult:1    冒险:333    战争:38    歌舞:30    喜剧:3076    古装:3    情色:11    爱情:350    恐怖:493    动作:1961    剧情:5150    犯罪:653    动画:1026    奇幻:100    荒诞:1    灾难:1    儿童:57    
+
+num of movies whose score &gt;= 9: 304
+
+maxscore film :    
+IMDB:    5761 title:神秘博士：DT的视频日志：最后的日子 David Tennant‘s Video Diary - The Final Days    type:纪录片
+
+minscore film :    IMDB:    487    title:嫁给大山的女人 type:剧情
+
+movie with the most comment people film :    
+IMDB:    5761    title:神秘博士：DT的视频日志：最后的日子 David Tennant’s Video Diary - The Final Days    type:纪录片
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yvonne.github.io/2017/01/18/20170104豆瓣电影可视化分析/" data-id="ciy31shxu0005mgrrxvmzmz2o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/movies/">movies</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tushare/">tushare</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/18/20170104利用tushare获得想要的文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">利用tushare获得想要的文章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sthaboutmyself/">sthaboutmyself</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/study/">study</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/finance/">finance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movies/">movies</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selfintro/">selfintro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tushare/">tushare</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/finance/" style="font-size: 10px;">finance</a> <a href="/tags/movies/" style="font-size: 15px;">movies</a> <a href="/tags/programming/" style="font-size: 20px;">programming</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/selfintro/" style="font-size: 10px;">selfintro</a> <a href="/tags/tushare/" style="font-size: 20px;">tushare</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/18/20170104豆瓣电影可视化分析/">豆瓣电影可视化分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/20170104利用tushare获得想要的文章/">利用tushare获得想要的文章</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/20170104中国电影业票房影响因素回归分析/">豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/20170104self introduction/">Hello world</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Yvonne Jia<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
