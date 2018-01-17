@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="R," />
+  <meta name="keywords" content="study; application for econ master," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="R语言基本指令，本文主要focus在数据结构上">
+<meta name="description" content="总结了一下我的申请季">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R语言，data">
-<meta property="og:url" content="https://yvonne.github.io/2018/01/17/20180817 R语言，data/index.html">
+<meta property="og:title" content="申请总结">
+<meta property="og:url" content="https://yvonne.github.io/2017/12/06/20171206 申请总结/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
-<meta property="og:description" content="R语言基本指令，本文主要focus在数据结构上">
-<meta property="og:updated_time" content="2018-01-17T21:46:22.999Z">
+<meta property="og:description" content="总结了一下我的申请季">
+<meta property="og:updated_time" content="2018-01-17T21:55:43.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R语言，data">
-<meta name="twitter:description" content="R语言基本指令，本文主要focus在数据结构上">
+<meta name="twitter:title" content="申请总结">
+<meta name="twitter:description" content="总结了一下我的申请季">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://yvonne.github.io/2018/01/17/20180817 R语言，data/"/>
+  <link rel="canonical" href="https://yvonne.github.io/2017/12/06/20171206 申请总结/"/>
 
 
 
 
 
-  <title>R语言，data | Yvonne's Blog</title>
+  <title>申请总结 | Yvonne's Blog</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2018/01/17/20180817 R语言，data/">
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2017/12/06/20171206 申请总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvonne Jia">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">R语言，data</h1>
+          <h1 class="post-title" itemprop="name headline">申请总结</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T21:46:26+00:00">
-                2018-01-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-06T21:46:26+00:00">
+                2017-12-06
               </time>
             
 
@@ -320,13 +320,10 @@
       
 
       
-        <p>R语言基本指令，本文主要focus在数据结构上<br><a id="more"></a><br>接上篇<br>本文主要是不同的数据类型以及基本的结构，主要参考的是datacamp练习</p>
-<p>##vector<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">***表示vector*** c(里面跟vector)</div><div class="line">***name a vector***:some_vector &lt;- c(&quot;John Doe&quot;, &quot;poker player&quot;)</div><div class="line">names(some_vector) &lt;- c(&quot;Name&quot;, &quot;Profession&quot;) </div><div class="line">#we will get   </div><div class="line">    Name     Profession </div><div class="line">    &quot;John Doe&quot; &quot;poker player&quot; </div><div class="line">***比较大小***</div><div class="line">To check if 6 is larger than 5, you type 6 &gt; 5. This returns a logical value (TRUE or FALSE).</div><div class="line">***选择数据***</div><div class="line">select the first element of the vector, you type poker_vector[1].select the second element of the vector, you type poker_vector[2]</div><div class="line">（注意顺序和python中不一样，第一个数字就type1）</div><div class="line">***选择roulette_vector中大于0的时候***</div><div class="line">selectionvector &lt;- roulette_vector&gt;0</div><div class="line">***选择roulette_vector中大于0的时候并显示数额***</div><div class="line">roulette_winning_days &lt;- roulette_vector[selection_vector]</div></pre></td></tr></table></figure></p>
-<p>##matrix</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">***form a matrix***</div><div class="line">matrix(1:9, byrow = TRUE, nrow = 3)</div><div class="line">box_office &lt;- c(new_hope, empire_strikes, return_jedi) , where new_hope, empire_strikes, return_jedi are vectors</div><div class="line"></div><div class="line">***add a name for matrix***</div><div class="line">rownames(my_matrix) &lt;- row_names_vector</div><div class="line">colnames(my_matrix) &lt;- col_names_vector</div><div class="line"></div><div class="line">*** calculates the totals for each row of a matrix***</div><div class="line">rowSums(my_matrix) #if sum a column, colSums()</div><div class="line"></div><div class="line">*** add column to a matrix***</div><div class="line">big_matrix &lt;- cbind(matrix1, matrix2, vector1 ...)(注意顺序以及matrix的demension） #if adding a row, just use rbind</div><div class="line"></div><div class="line">***选择数据***</div><div class="line">my_matrix[1,2] selects the element at the first row and second column.</div><div class="line">my_matrix[1:3,2:4] results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.</div><div class="line">my_matrix[,1] selects all elements of the first column.</div><div class="line">my_matrix[1,] selects all elements of the first row.</div><div class="line"></div><div class="line">***matrix运算***</div><div class="line">2 * my_matrix multiplied every element of my_matrix by two</div><div class="line">my_matrix1 * my_matrix2 creates a matrix where each element is the product of the corresponding elements in my_matrix1 and my_matrix2</div></pre></td></tr></table></figure>
-<h2 id="factor"><a href="#factor" class="headerlink" title="factor"></a>factor</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">***change the names of specific factor levels***</div><div class="line">levels(factor_vector) &lt;- c(&quot;name1&quot;, &quot;name2&quot;,...)</div><div class="line">***create an ordered factor***</div><div class="line">you have to add two additional arguments: ordered and levels.</div><div class="line">factor(some_vector,</div><div class="line">       ordered = TRUE,</div><div class="line">       levels = c(&quot;lev1&quot;, &quot;lev2&quot; ...))</div></pre></td></tr></table></figure>
-<h2 id="data-frames"><a href="#data-frames" class="headerlink" title="data frames"></a>data frames</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">***insight of the data structure***</div><div class="line">head() show the first observations of a data frame the function </div><div class="line">tail() prints out the last observations in your data set.</div><div class="line">***construct a dataframe***</div><div class="line">use data.frame()</div><div class="line">planets_df &lt;-data.frame(name,type,diameter,rotation,rings)</div><div class="line">where name, type...are vectors</div><div class="line">***select elements***</div><div class="line">like matrix</div><div class="line">planets_df[1:3,&quot;type&quot;] #look up for the first elements of column type</div><div class="line">planets_df$diameter #select the whole diameter column</div><div class="line">subset(planets_df, subset= diameter &lt;1) #选择diameter&lt;1的星球</div></pre></td></tr></table></figure>
-<h2 id="lists"><a href="#lists" class="headerlink" title="lists"></a>lists</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">***construct a list***</div><div class="line">my_list &lt;- list(comp1, comp2 ...) #comp1 comp2 are vectors</div><div class="line">***give names to your list***</div><div class="line">my_list &lt;- list(name1 = your_comp1, </div><div class="line">                name2 = your_comp2)</div><div class="line">or:</div><div class="line">my_list &lt;- list(your_comp1, your_comp2)</div><div class="line">names(my_list) &lt;- c(&quot;name1&quot;, &quot;name2&quot;)</div><div class="line">***select***</div><div class="line">shining_list[[1]] #&quot;grab&quot; the first component of shining_list</div><div class="line">shining_list[[&quot;reviews&quot;]]</div><div class="line">shining_list$reviews  </div><div class="line">#The three instructions do the same</div><div class="line">shining_list$actors[2] #choose the second element of actors</div></pre></td></tr></table></figure>
+        <p>总结了一下我的申请季<br><a id="more"></a><br>去年的申请季我混申了经济管理和金融的十个项目，最终拿到了五个offer，过程中走了一些弯路。在这里我就写写对于我整个申请季的思考以及对自己最后就读的项目（LSE ECON）以及 EME项目（数理经济学硕士），之前的推送中董丁同学没有提到的偏就业类型的经济硕士的介绍吧。</p>
+<h2 id="一，定位"><a href="#一，定位" class="headerlink" title="一，定位"></a>一，定位</h2><p>申请的第一步肯定还是定位啦。首先我觉得第一步还是要先考虑清楚你以后的人生方向吧。你读这个master是为了继续深造读phd呢还是出于现实的考虑读完以后找一个金融管理方向的工作呢。整个经院的同学一般申请的方向会比较重叠，经济、金融、管理，还有各种相关的院系。（我们这一届还有转统计和CS的）具体申请的时候还是要结合自己未来的职业规划来。<br>第二步就是结合自己的实际情况来做一些选择。在这里我建议大家可以多去申请的论坛（比如寄托，chasedream等，后者比较偏向于商科类）看看，经济学的项目有哪些，和我背景比较像的那些人都申请了哪里（这里的背景包括了GPA,推荐信，GT成绩，研究背景/实习经历等）。然后再上官网看这些项目的各自特色，往年数据,申请者多少，招了多少人，是什么背景，去向是什么等等。<br>当然在这里我还是把重点放在经济系的申请上吧。</p>
+<h2 id="二、选择的项目"><a href="#二、选择的项目" class="headerlink" title="二、选择的项目"></a>二、选择的项目</h2><p>我最终选择的经济系项目有：@nyu econ，@columbia econ @duke econ&amp;ppe @umich econ @lse econ<br>拿到的offer有：@nyu econ @duke econ @umich econ @lse econ<br>由于是打算硕士毕业以后就业的，所以申请的项目还是和传统的PHD TRACK不太一样。在这里也对这些项目做一个比较浅显的介绍吧。<br>然后经济学的master项目和phd不同，一般都是没有面试的，所以就不写面试的部分了。<br>@nyu econ:这个项目其实是我比较心水的项目之一。这个项目和当PHD跳板关系不大，想读phd的慎重选择。但是对于就业而言是一个不错的选项，主要原因是地理位置很好，在纽约。听学长学姐说应该能够在纽约找到一两个实习，劣势就是我觉得学费消费比较高，而且也不是Stern商学院的。并且是夜校。听起来虽然有点low,但其实夜校有夜校的优势（比如说白天可以全职做实习），而且也是正经的学院，这个项目去年stem了。项目可以一年半读完可以两年，比较flexible，课程选择程度高。<br>@columbia econ：这个项目把我无面拒了QAQ,哥大的地理位置很好，也是phd track的。但是由于哥大的名声+地理位置，就业应该也是很不错的。去年从一年的项目改为了一年半，stem。<br>@duke econ：杜克这个项目应该是很多人心中北美最好的econ program了，是phd的很好的跳板（商学院以及经济系）。可以有很多track的选择，可以选择商学院的课。然后这个项目也很贵，stem。<br>@umich econ：这是我收到的唯一一个在offer上就说我们这个项目不适合读phd的program。课程的话还是偏应用多一些。非stem。<br>@lse econ/eme：相信每个读经济系想要出国的同学都会考虑一下LSE啦。在这里介绍一下自己最后就读的lse econ项目。以及许多想读博同学心目中的女神级项目eme。<br>首先，<br>共同点：两个项目都是phd track。拿到distinction都可以保证直升本校博士。（但是不保证有funding)<br>平时很多额外的信息啊资源啊什么的都算是共享吧，eme和econ的学生会收到一样的邮件，告诉我们RA的机会，career service那边的机会等等。<br>不同点：<br>（来自对两位EME同学的采访，特别鸣谢这两位同学！）<br>一、课程上。EME和ECON不是一起上课的。从规模上来看EME要小得多，大概30个人左右，上课的时候可能更容易给教授留下更深的印象。ECON是140人左右，平时lecture是大课，class是小课（econ的话，class一般是TA上课，但是也有的是教授自己来，比如macro）。但是教授都会有自己固定的office hour，那个时候也可以交流。EME学的课程会更加学术一些。<br>二、未来规划上。相对而言ECON想要就业的比例会更高一些。EME的同学大多数还是想要读博。读博的话，EME项目小，录取难度很高，课程难度大等特征应该会形成一个signal，在业界的口碑更好一些。EME拿distinction的概率也更高一些（20%-25%左右），ECON是10-15%左右。然后据说EME的学生前10%一般会考虑给funding。ECON的话应该达不到这个比率。<br>读博的话，有准备GAP的也有不准备GAP直接申请的，看个人吧。<br>三、关于能不能同时申请eme和econ。传言中LSE不考虑第二志愿，但是EME和ECON是可以的。我见过第一志愿EME然后没上最后给了ECON offer的。（还见过申请了ECON HISTORY还是ECON PHILOSOPHY没申请ECON的被发邮件说ECON DEPARTMENT要走了申请表建议读ECON两年的）。所以，想读博的，可以考虑同时申请ECON和EME。<br>四、关于转专业申请ECON。其实是没有什么问题的。我旁边的同学本科不是经济系的也有相当一部分，比如数学，国贸啊之类的。也有见到很多本科同学金融系的金工系的出国去读了经济的master。只要修了宏观微观计量还有要求的数学课程应该问题都不大。或者还可以考虑LSE的两年的ECON项目，是给本科没有经济背景的同学准备的。<br>五、来自eme某大神同学的补充信息：<br>eme在国内可能名气不大。国内的公司能分清lse eme和econ的少（所以在Job market上signal的作用不会很大）<br>目前即便是申请博士。eme的录取signal作用可能有，但应该没有那么大。在econ job market rumor上看到有说eme录取variation比较大，signal作用有限。所以录取了eme的学弟学妹们要知道这只是万里长征的一小步。<br>课程来说，英语基础不太好的同学要有心理准备，需要一段适应期。由于时间短，上课期间还是比较忙的。<br>还有想去eme的同学。本科最后一学期可以考虑补下随机过程。<br><strong>其他的我觉得很好的econ的项目（phd track的可以考虑）</strong><br>@ UWM Econ：属于北美两个最好的跳板之一。性价比很高。<br>@ CEMFI：西班牙的跳板项目。具体可见董丁同学的推送。</p>
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>我个人觉得对于申请而言，首先还是要确定自己未来的方向吧。想明白自己适不适合读PHD（因为经济还是一门偏理论的学科），如果真的热爱觉得有趣想读的话，就可以按照董丁同学那个推送里的最后一段建议看看自己是不是哪里还可以补充一下。如果是选择就业的话，也可以利用好大四最后的阶段给自己充充电，学习下金融知识（或者是想进入别的行业就可以学习下那个行业的知识），找个实习，多试错。<br>在决定出国以后到现在认识了很多优秀的人，学习社团实习都能够兼顾，从大一开始就可以有意识地去了解自己所在的行业的全貌并且做出很多努力，我在这段申请过程中也看到了自己和他们的差距。我想这是我在申请季最大的一份收获了。<br>结果什么的在十年以后，甚至五年以后看来不会那么重要。重要的是在更加了解自己，为了心中的目标去不懈的努力的过程。希望大家都能享受这个申请的过程。<br>祝福大家。</p>
 
       
     </div>
@@ -344,7 +341,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/R/" rel="tag"># R</a>
+            <a href="/tags/study-application-for-econ-master/" rel="tag"># study; application for econ master</a>
           
         </div>
       
@@ -357,8 +354,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/11/20180111R语言学习基本指令读取文件以及数据/" rel="next" title="R语言学习基本指令读取文件以及数据">
-                <i class="fa fa-chevron-left"></i> R语言学习基本指令读取文件以及数据
+              <a href="/2017/10/14/20171014研究生开学两个月的反思/" rel="next" title="研究生开学两个月的反思">
+                <i class="fa fa-chevron-left"></i> 研究生开学两个月的反思
               </a>
             
           </div>
@@ -366,6 +363,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/05/20180105 2017年终总结/" rel="prev" title="2017年终总结">
+                2017年终总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -497,7 +498,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#factor"><span class="nav-number">1.</span> <span class="nav-text">factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-frames"><span class="nav-number">2.</span> <span class="nav-text">data frames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">3.</span> <span class="nav-text">lists</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，定位"><span class="nav-number">1.</span> <span class="nav-text">一，定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、选择的项目"><span class="nav-number">2.</span> <span class="nav-text">二、选择的项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、总结"><span class="nav-number">3.</span> <span class="nav-text">三、总结</span></a></li></ol></div>
             
 
           </div>
