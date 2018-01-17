@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="R语言基本指令，本文主要focus在读取文件以及数据介绍上">
+<meta name="description" content="R语言基本指令，本文主要focus在数据结构上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R语言学习基本指令读取文件以及数据">
-<meta property="og:url" content="https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/index.html">
+<meta property="og:title" content="R语言，data">
+<meta property="og:url" content="https://yvonne.github.io/2018/01/17/20180817 R语言，data/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
-<meta property="og:description" content="R语言基本指令，本文主要focus在读取文件以及数据介绍上">
-<meta property="og:updated_time" content="2018-01-11T23:38:40.845Z">
+<meta property="og:description" content="R语言基本指令，本文主要focus在数据结构上">
+<meta property="og:updated_time" content="2018-01-17T21:46:22.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R语言学习基本指令读取文件以及数据">
-<meta name="twitter:description" content="R语言基本指令，本文主要focus在读取文件以及数据介绍上">
+<meta name="twitter:title" content="R语言，data">
+<meta name="twitter:description" content="R语言基本指令，本文主要focus在数据结构上">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/"/>
+  <link rel="canonical" href="https://yvonne.github.io/2018/01/17/20180817 R语言，data/"/>
 
 
 
 
 
-  <title>R语言学习基本指令读取文件以及数据 | Yvonne's Blog</title>
+  <title>R语言，data | Yvonne's Blog</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/">
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2018/01/17/20180817 R语言，data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvonne Jia">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">R语言学习基本指令读取文件以及数据</h1>
+          <h1 class="post-title" itemprop="name headline">R语言，data</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-11T22:31:26+00:00">
-                2018-01-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T21:46:26+00:00">
+                2018-01-17
               </time>
             
 
@@ -320,11 +320,13 @@
       
 
       
-        <p>R语言基本指令，本文主要focus在读取文件以及数据介绍上<br><a id="more"></a><br>觉得自己以后可能生活中很经常会和R语言打交道，并且觉得R在处理数据上很好用并且相对于其他机器语言好学一些，决定好好学习R语言。这篇文章的内容主要也是参考其他人的博客以及coursera上JHU和duke的课程，希望后期能够做到一些简单的实现。学习用的材料用的是中英双语的，所以后面的代码书写会出现两种语言。<br>有用的数据网站：<a href="https://www.kaggle.com/harlfoxem/housesalesprediction" target="_blank" rel="external">https://www.kaggle.com/harlfoxem/housesalesprediction</a> ## housing transactions in King County<br>工具：R Studio</p>
-<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h2><p>主要借鉴的我的计量老师 Rachael Meager的,也是一些编程中的好习惯吧，提醒自己<br>(1) ALWAYS name your variables something descriptive<br>(2) indent your code (use tab)<br>(3) make everything into a function if it can possibly be a function (always make a module)<br>(4) almost never hardcode a number or copy and paste pieces of code<br>(5) check that those canned functions do what you think they do<br> – especially when they encounter NAs<br>6) write unit tests and debug regularly and systematically<br>– asymmetric debugging is a form of fishing</p>
-<p><strong><em>基本指令</em></strong>：</p>
-<h2 id="前期工作，文件读取等"><a href="#前期工作，文件读取等" class="headerlink" title="前期工作，文件读取等"></a>前期工作，文件读取等</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm(list=ls()) #clear workspace first</div><div class="line">getwd( )  # 找到working directory</div><div class="line">setwd(&quot;The path of the data&quot;) #import data</div><div class="line">read.csv(“文件路径”) #读取文件 文件路径可用查看属性方式找到</div></pre></td></tr></table></figure>
-<h2 id="R-with-statistics"><a href="#R-with-statistics" class="headerlink" title="R with statistics"></a>R with statistics</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">***赋值***</div><div class="line">&lt;-,like x&lt;-1,令x=1，此时如果 print(x)，output [1] [1]表明x是一个vector and 5 is the first element</div><div class="line">x &lt;- 1:20 #create a sequence of 1 2 3 4 5 ...20(vector,integer)</div><div class="line">*** creating vectors***</div><div class="line">方式一 c function</div><div class="line">x &lt;- c(0.5,0.6) ##numeric</div><div class="line">x &lt;- c(T,F) ##logical</div><div class="line">x &lt;- c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;) ##character</div><div class="line">x &lt;- c(0+1i,2+2i) ##complex</div><div class="line">## list is a special vector that can contain different classes</div><div class="line">方式二 vector</div><div class="line">x &lt;- vector(&quot;numeric&quot;, length=10)</div><div class="line">***converge data from one class to another***</div><div class="line">as.logical(x)，把x convert to logical class, T or F</div><div class="line">*** creating matrices***</div><div class="line">方法一 m &lt;- matrix(1:6,nrow = 2, ncol =3) ##构造一个两行三列的matrix</div><div class="line">方法二， convert from vectors by adding dim()</div><div class="line">m &lt;- 1:10</div><div class="line">dim(m) &lt;- c(2,5)</div><div class="line"></div><div class="line"></div><div class="line">***判断数据属于哪个class,比如interger</div><div class="line">class()</div></pre></td></tr></table></figure>
+        <p>R语言基本指令，本文主要focus在数据结构上<br><a id="more"></a><br>接上篇<br>本文主要是不同的数据类型以及基本的结构，主要参考的是datacamp练习</p>
+<p>##vector<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">***表示vector*** c(里面跟vector)</div><div class="line">***name a vector***:some_vector &lt;- c(&quot;John Doe&quot;, &quot;poker player&quot;)</div><div class="line">names(some_vector) &lt;- c(&quot;Name&quot;, &quot;Profession&quot;) </div><div class="line">#we will get   </div><div class="line">    Name     Profession </div><div class="line">    &quot;John Doe&quot; &quot;poker player&quot; </div><div class="line">***比较大小***</div><div class="line">To check if 6 is larger than 5, you type 6 &gt; 5. This returns a logical value (TRUE or FALSE).</div><div class="line">***选择数据***</div><div class="line">select the first element of the vector, you type poker_vector[1].select the second element of the vector, you type poker_vector[2]</div><div class="line">（注意顺序和python中不一样，第一个数字就type1）</div><div class="line">***选择roulette_vector中大于0的时候***</div><div class="line">selectionvector &lt;- roulette_vector&gt;0</div><div class="line">***选择roulette_vector中大于0的时候并显示数额***</div><div class="line">roulette_winning_days &lt;- roulette_vector[selection_vector]</div></pre></td></tr></table></figure></p>
+<p>##matrix</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">***form a matrix***</div><div class="line">matrix(1:9, byrow = TRUE, nrow = 3)</div><div class="line">box_office &lt;- c(new_hope, empire_strikes, return_jedi) , where new_hope, empire_strikes, return_jedi are vectors</div><div class="line"></div><div class="line">***add a name for matrix***</div><div class="line">rownames(my_matrix) &lt;- row_names_vector</div><div class="line">colnames(my_matrix) &lt;- col_names_vector</div><div class="line"></div><div class="line">*** calculates the totals for each row of a matrix***</div><div class="line">rowSums(my_matrix) #if sum a column, colSums()</div><div class="line"></div><div class="line">*** add column to a matrix***</div><div class="line">big_matrix &lt;- cbind(matrix1, matrix2, vector1 ...)(注意顺序以及matrix的demension） #if adding a row, just use rbind</div><div class="line"></div><div class="line">***选择数据***</div><div class="line">my_matrix[1,2] selects the element at the first row and second column.</div><div class="line">my_matrix[1:3,2:4] results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.</div><div class="line">my_matrix[,1] selects all elements of the first column.</div><div class="line">my_matrix[1,] selects all elements of the first row.</div><div class="line"></div><div class="line">***matrix运算***</div><div class="line">2 * my_matrix multiplied every element of my_matrix by two</div><div class="line">my_matrix1 * my_matrix2 creates a matrix where each element is the product of the corresponding elements in my_matrix1 and my_matrix2</div></pre></td></tr></table></figure>
+<h2 id="factor"><a href="#factor" class="headerlink" title="factor"></a>factor</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">***change the names of specific factor levels***</div><div class="line">levels(factor_vector) &lt;- c(&quot;name1&quot;, &quot;name2&quot;,...)</div><div class="line">***create an ordered factor***</div><div class="line">you have to add two additional arguments: ordered and levels.</div><div class="line">factor(some_vector,</div><div class="line">       ordered = TRUE,</div><div class="line">       levels = c(&quot;lev1&quot;, &quot;lev2&quot; ...))</div></pre></td></tr></table></figure>
+<h2 id="data-frames"><a href="#data-frames" class="headerlink" title="data frames"></a>data frames</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">***insight of the data structure***</div><div class="line">head() show the first observations of a data frame the function </div><div class="line">tail() prints out the last observations in your data set.</div><div class="line">***construct a dataframe***</div><div class="line">use data.frame()</div><div class="line">planets_df &lt;-data.frame(name,type,diameter,rotation,rings)</div><div class="line">where name, type...are vectors</div><div class="line">***select elements***</div><div class="line">like matrix</div><div class="line">planets_df[1:3,&quot;type&quot;] #look up for the first elements of column type</div><div class="line">planets_df$diameter #select the whole diameter column</div><div class="line">subset(planets_df, subset= diameter &lt;1) #选择diameter&lt;1的星球</div></pre></td></tr></table></figure>
+<h2 id="lists"><a href="#lists" class="headerlink" title="lists"></a>lists</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">***construct a list***</div><div class="line">my_list &lt;- list(comp1, comp2 ...) #comp1 comp2 are vectors</div><div class="line">***give names to your list***</div><div class="line">my_list &lt;- list(name1 = your_comp1, </div><div class="line">                name2 = your_comp2)</div><div class="line">or:</div><div class="line">my_list &lt;- list(your_comp1, your_comp2)</div><div class="line">names(my_list) &lt;- c(&quot;name1&quot;, &quot;name2&quot;)</div><div class="line">***select***</div><div class="line">shining_list[[1]] #&quot;grab&quot; the first component of shining_list</div><div class="line">shining_list[[&quot;reviews&quot;]]</div><div class="line">shining_list$reviews  </div><div class="line">#The three instructions do the same</div><div class="line">shining_list$actors[2] #choose the second element of actors</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -355,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/05/20180105 2017年终总结/" rel="next" title="2017年终总结">
-                <i class="fa fa-chevron-left"></i> 2017年终总结
+              <a href="/2018/01/11/20180111R语言学习基本指令读取文件以及数据/" rel="next" title="R语言学习基本指令读取文件以及数据">
+                <i class="fa fa-chevron-left"></i> R语言学习基本指令读取文件以及数据
               </a>
             
           </div>
@@ -364,10 +366,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/17/20180817 R语言，data/" rel="prev" title="R语言，data">
-                R语言，data <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,7 +497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面的话"><span class="nav-number">1.</span> <span class="nav-text">写在前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期工作，文件读取等"><span class="nav-number">2.</span> <span class="nav-text">前期工作，文件读取等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-with-statistics"><span class="nav-number">3.</span> <span class="nav-text">R with statistics</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#factor"><span class="nav-number">1.</span> <span class="nav-text">factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-frames"><span class="nav-number">2.</span> <span class="nav-text">data frames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">3.</span> <span class="nav-text">lists</span></a></li></ol></div>
             
 
           </div>
