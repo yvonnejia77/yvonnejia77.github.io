@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="programming,python,tushare,movies," />
+  <meta name="keywords" content="R," />
 
 
 
@@ -79,22 +79,16 @@
 
 
 
-<meta name="description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
+<meta name="description" content="R语言基本指令，本文主要focus在数据结构上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析">
-<meta property="og:url" content="https://yvonne.github.io/2017/01/04/20170104中国电影业票房影响因素回归分析/index.html">
+<meta property="og:title" content="R语言，data">
+<meta property="og:url" content="https://yvonne.github.io/2018/01/17/20180117 R语言，data/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
-<meta property="og:description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/j0g56mrr51m23ieh18edkeqc/%E5%9B%BE%E7%89%87%201.png">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/etnr435r1yv0u2mbjc2p8v4d/WechatIMG163.jpeg">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/5w9s61apnw0ztc52c16qzdvp/WechatIMG164.jpeg">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/iy1509mcjypx2qov7pp5340i/WechatIMG165.jpeg">
-<meta property="og:updated_time" content="2017-01-04T13:32:52.000Z">
+<meta property="og:description" content="R语言基本指令，本文主要focus在数据结构上">
+<meta property="og:updated_time" content="2018-01-17T21:46:22.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析">
-<meta name="twitter:description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
-<meta name="twitter:image" content="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg">
+<meta name="twitter:title" content="R语言，data">
+<meta name="twitter:description" content="R语言基本指令，本文主要focus在数据结构上">
 
 
 
@@ -124,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://yvonne.github.io/2017/01/04/20170104中国电影业票房影响因素回归分析/"/>
+  <link rel="canonical" href="https://yvonne.github.io/2018/01/17/20180117 R语言，data/"/>
 
 
 
 
 
-  <title>豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析 | Yvonne's Blog</title>
+  <title>R语言，data | Yvonne's Blog</title>
   
 
 
@@ -237,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2017/01/04/20170104中国电影业票房影响因素回归分析/">
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2018/01/17/20180117 R语言，data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvonne Jia">
@@ -254,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析</h1>
+          <h1 class="post-title" itemprop="name headline">R语言，data</h1>
         
 
         <div class="post-meta">
@@ -266,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-04T13:32:52+00:00">
-                2017-01-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T21:46:26+00:00">
+                2018-01-17
               </time>
             
 
@@ -326,13 +320,13 @@
       
 
       
-        <hr>
-<p>本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归<br><a id="more"></a></p>
-<h2 id="背景阐述"><a href="#背景阐述" class="headerlink" title="背景阐述"></a>背景阐述</h2><p>对于电影票房影响因素的分析，国内外已经成果颇丰，内容主要集中于对单部电影票房影响因素的分析。此次我们是从宏观角度探讨中国爆发性增长的电影总票房的影响因素。2002年6月1日，根据《关于改革电影发行放映机制的实施细则》，全国首批30条电影院线正式成立运营，872家影院、1581块银幕开始以全新的市场主体身份参与竞争。我们选取的数据就是院线制改革后的数据，因距今不算太久远，因此样本数量较少，在此仅作简单的回归分析。</p>
-<h2 id="变量选取"><a href="#变量选取" class="headerlink" title="变量选取"></a>变量选取</h2><p>被解释变量——中国电影票房总收入；解释变量：国民收入水平，中国电影产量（以故事片数量替代），银幕数量，居民消费价格指数。</p>
-<h2 id="基于样本数据的统计性描述"><a href="#基于样本数据的统计性描述" class="headerlink" title="基于样本数据的统计性描述"></a>基于样本数据的统计性描述</h2><p><img src="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg" alt="WechatIMG162.jpeg-232.5kB"><br>从上表可以看出，每个变量的标准差都较大，说明14年内增长显著；电影产量的偏度为负，峰度出现在2012年，说明近四年电影产量较2012年下降；其余变量偏度均为正值。<br><img src="http://static.zybuluo.com/windkl/j0g56mrr51m23ieh18edkeqc/%E5%9B%BE%E7%89%87%201.png" alt="图片 1.png-62.2kB"><br>上图是总票房、影院数、银屏数增长率所画的图。可以看出影院和银屏的增长速度从2012年开始放缓；票房在2010-2011年爆炸性增长，影院和银屏在2011-2012年间爆炸性增长；影院和银屏的增长相较票房增长具有滞后性。</p>
-<h2 id="回归分析"><a href="#回归分析" class="headerlink" title="回归分析"></a>回归分析</h2><p>初步设定模型为：ln(Y/X4 )=C1+C2<em>ln(X1/X4)+C3</em>ln(X2)+C4*ln(X3)<br>采用OLS法，利用EViews得到以下结果：<br><img src="http://static.zybuluo.com/windkl/etnr435r1yv0u2mbjc2p8v4d/WechatIMG163.jpeg" alt="WechatIMG163.jpeg-116.5kB"><br>残差分布均匀，说明残差不存在序列自相关。<br><img src="http://static.zybuluo.com/windkl/5w9s61apnw0ztc52c16qzdvp/WechatIMG164.jpeg" alt="WechatIMG164.jpeg-149.2kB"><br>由上表可知Fprob＜0.05，因此整体线性关系显著；判定系数0.994876，说明拟合优度佳；但是Movieproduction这一解释变量未通过t检验，不显著，说明这一解释变量选择不合理，可能存在多重共线性。<br>将数据逐步回归并检验可得：</p>
-<p><img src="http://static.zybuluo.com/windkl/iy1509mcjypx2qov7pp5340i/WechatIMG165.jpeg" alt="WechatIMG165.jpeg-146.4kB"><br>逐步回归结果显示：实际国民收入与银幕数对电影票房的线性影响显著，具体表现为实际国民收入水平每变增加1%，实际电影票房收入就会增加1.299804%，电影银幕数量每增加1%，实际电影票房收入就会增加0.569670%。而中国电影产量对票房影响很小，原因可能是增加的电影由于审批制度、本身质量问题、缺乏营销宣传、进口分账片势力强大等缺乏竞争力的少，因此对票房的增长没有什么贡献。</p>
+        <p>R语言基本指令，本文主要focus在数据结构上<br><a id="more"></a><br>接上篇<br>本文主要是不同的数据类型以及基本的结构，主要参考的是datacamp练习</p>
+<p>##vector<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">***表示vector*** c(里面跟vector)</div><div class="line">***name a vector***:some_vector &lt;- c(&quot;John Doe&quot;, &quot;poker player&quot;)</div><div class="line">names(some_vector) &lt;- c(&quot;Name&quot;, &quot;Profession&quot;) </div><div class="line">#we will get   </div><div class="line">    Name     Profession </div><div class="line">    &quot;John Doe&quot; &quot;poker player&quot; </div><div class="line">***比较大小***</div><div class="line">To check if 6 is larger than 5, you type 6 &gt; 5. This returns a logical value (TRUE or FALSE).</div><div class="line">***选择数据***</div><div class="line">select the first element of the vector, you type poker_vector[1].select the second element of the vector, you type poker_vector[2]</div><div class="line">（注意顺序和python中不一样，第一个数字就type1）</div><div class="line">***选择roulette_vector中大于0的时候***</div><div class="line">selectionvector &lt;- roulette_vector&gt;0</div><div class="line">***选择roulette_vector中大于0的时候并显示数额***</div><div class="line">roulette_winning_days &lt;- roulette_vector[selection_vector]</div></pre></td></tr></table></figure></p>
+<p>##matrix</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">***form a matrix***</div><div class="line">matrix(1:9, byrow = TRUE, nrow = 3)</div><div class="line">box_office &lt;- c(new_hope, empire_strikes, return_jedi) , where new_hope, empire_strikes, return_jedi are vectors</div><div class="line"></div><div class="line">***add a name for matrix***</div><div class="line">rownames(my_matrix) &lt;- row_names_vector</div><div class="line">colnames(my_matrix) &lt;- col_names_vector</div><div class="line"></div><div class="line">*** calculates the totals for each row of a matrix***</div><div class="line">rowSums(my_matrix) #if sum a column, colSums()</div><div class="line"></div><div class="line">*** add column to a matrix***</div><div class="line">big_matrix &lt;- cbind(matrix1, matrix2, vector1 ...)(注意顺序以及matrix的demension） #if adding a row, just use rbind</div><div class="line"></div><div class="line">***选择数据***</div><div class="line">my_matrix[1,2] selects the element at the first row and second column.</div><div class="line">my_matrix[1:3,2:4] results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.</div><div class="line">my_matrix[,1] selects all elements of the first column.</div><div class="line">my_matrix[1,] selects all elements of the first row.</div><div class="line"></div><div class="line">***matrix运算***</div><div class="line">2 * my_matrix multiplied every element of my_matrix by two</div><div class="line">my_matrix1 * my_matrix2 creates a matrix where each element is the product of the corresponding elements in my_matrix1 and my_matrix2</div></pre></td></tr></table></figure>
+<h2 id="factor"><a href="#factor" class="headerlink" title="factor"></a>factor</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">***change the names of specific factor levels***</div><div class="line">levels(factor_vector) &lt;- c(&quot;name1&quot;, &quot;name2&quot;,...)</div><div class="line">***create an ordered factor***</div><div class="line">you have to add two additional arguments: ordered and levels.</div><div class="line">factor(some_vector,</div><div class="line">       ordered = TRUE,</div><div class="line">       levels = c(&quot;lev1&quot;, &quot;lev2&quot; ...))</div></pre></td></tr></table></figure>
+<h2 id="data-frames"><a href="#data-frames" class="headerlink" title="data frames"></a>data frames</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">***insight of the data structure***</div><div class="line">head() show the first observations of a data frame the function </div><div class="line">tail() prints out the last observations in your data set.</div><div class="line">***construct a dataframe***</div><div class="line">use data.frame()</div><div class="line">planets_df &lt;-data.frame(name,type,diameter,rotation,rings)</div><div class="line">where name, type...are vectors</div><div class="line">***select elements***</div><div class="line">like matrix</div><div class="line">planets_df[1:3,&quot;type&quot;] #look up for the first elements of column type</div><div class="line">planets_df$diameter #select the whole diameter column</div><div class="line">subset(planets_df, subset= diameter &lt;1) #选择diameter&lt;1的星球</div></pre></td></tr></table></figure>
+<h2 id="lists"><a href="#lists" class="headerlink" title="lists"></a>lists</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">***construct a list***</div><div class="line">my_list &lt;- list(comp1, comp2 ...) #comp1 comp2 are vectors</div><div class="line">***give names to your list***</div><div class="line">my_list &lt;- list(name1 = your_comp1, </div><div class="line">                name2 = your_comp2)</div><div class="line">or:</div><div class="line">my_list &lt;- list(your_comp1, your_comp2)</div><div class="line">names(my_list) &lt;- c(&quot;name1&quot;, &quot;name2&quot;)</div><div class="line">***select***</div><div class="line">shining_list[[1]] #&quot;grab&quot; the first component of shining_list</div><div class="line">shining_list[[&quot;reviews&quot;]]</div><div class="line">shining_list$reviews  </div><div class="line">#The three instructions do the same</div><div class="line">shining_list$actors[2] #choose the second element of actors</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -350,13 +344,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/programming/" rel="tag"># programming</a>
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-            <a href="/tags/tushare/" rel="tag"># tushare</a>
-          
-            <a href="/tags/movies/" rel="tag"># movies</a>
+            <a href="/tags/R/" rel="tag"># R</a>
           
         </div>
       
@@ -369,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/04/20170104豆瓣电影可视化分析/" rel="next" title="豆瓣电影可视化分析">
-                <i class="fa fa-chevron-left"></i> 豆瓣电影可视化分析
+              <a href="/2018/01/11/20180111R语言学习基本指令读取文件以及数据/" rel="next" title="R语言学习基本指令读取文件以及数据">
+                <i class="fa fa-chevron-left"></i> R语言学习基本指令读取文件以及数据
               </a>
             
           </div>
@@ -378,10 +366,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/18/20170118香港初认知/" rel="prev" title="香港初认知">
-                香港初认知 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,7 +497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景阐述"><span class="nav-number">1.</span> <span class="nav-text">背景阐述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量选取"><span class="nav-number">2.</span> <span class="nav-text">变量选取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于样本数据的统计性描述"><span class="nav-number">3.</span> <span class="nav-text">基于样本数据的统计性描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回归分析"><span class="nav-number">4.</span> <span class="nav-text">回归分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#factor"><span class="nav-number">1.</span> <span class="nav-text">factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-frames"><span class="nav-number">2.</span> <span class="nav-text">data frames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">3.</span> <span class="nav-text">lists</span></a></li></ol></div>
             
 
           </div>
