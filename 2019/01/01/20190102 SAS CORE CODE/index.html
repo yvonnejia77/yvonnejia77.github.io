@@ -82,13 +82,15 @@
 <meta name="description" content="most useful SAS code here.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SAS CORE CODE">
-<meta property="og:url" content="https://yvonne.github.io/2019/01/01/20190101 SAS CORE CODE/index.html">
+<meta property="og:url" content="https://yvonne.github.io/2019/01/01/20190102 SAS CORE CODE/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
 <meta property="og:description" content="most useful SAS code here.">
-<meta property="og:updated_time" content="2018-12-31T09:45:49.373Z">
+<meta property="og:image" content="https://yvonne.github.io/img/2019010101.jpg">
+<meta property="og:updated_time" content="2019-01-02T07:47:11.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAS CORE CODE">
 <meta name="twitter:description" content="most useful SAS code here.">
+<meta name="twitter:image" content="https://yvonne.github.io/img/2019010101.jpg">
 
 
 
@@ -118,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://yvonne.github.io/2019/01/01/20190101 SAS CORE CODE/"/>
+  <link rel="canonical" href="https://yvonne.github.io/2019/01/01/20190102 SAS CORE CODE/"/>
 
 
 
@@ -184,7 +186,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -231,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2019/01/01/20190101 SAS CORE CODE/">
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2019/01/01/20190102 SAS CORE CODE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvonne Jia">
@@ -258,7 +260,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-01T18:06:00+08:00">
                 2019-01-01
@@ -279,7 +281,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -321,13 +323,87 @@
 
       
         <p>most useful SAS code here.<br><a id="more"></a></p>
-<p>###Notes here<br>don’t forget to create a new library before starting your SAS program or it will disappear after you close SAS.<br>Whenever you make some notes, use “*… ;”</p>
-<h3 id="Import-files"><a href="#Import-files" class="headerlink" title="Import files"></a>Import files</h3><pre><code>To import CSV file:
-PROC IMPORT DATAFILE = &apos;path\xx.csv&apos; OUT=LIB.xxx ;
+<p>#Notes here<br>don’t forget to create a new library before starting your SAS program or it will disappear after you close SAS.<br>Whenever you make some notes, use “* … ;”</p>
+<h1 id="Import-files"><a href="#Import-files" class="headerlink" title="Import files"></a>Import files</h1><h2 id="To-import-CSV-file-general-version"><a href="#To-import-CSV-file-general-version" class="headerlink" title="To import CSV file: general version"></a>To import CSV file: general version</h2><pre><code>PROC IMPORT DATAFILE = &apos;path\xx.csv&apos; OUT=LIB.xxx ;
 DBMS=CSV;
 REPLACE;
 RUN;
-</code></pre><h3 id="merge-tables"><a href="#merge-tables" class="headerlink" title="merge tables"></a>merge tables</h3>
+</code></pre><p>If for your dataset, some variables missing at the beginning, then use guessingrows:</p>
+<pre><code>proc import file=&apos;path\patents.csv&apos; 
+guessingrows=3000000;  *approximate number;
+out=lib.name dbms=csv;
+run;
+</code></pre><h1 id="merge-tables"><a href="#merge-tables" class="headerlink" title="merge tables"></a>merge tables</h1><p><img src="/img/2019010101.jpg" alt="Alt text"></p>
+<h2 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h2><pre><code>proc sql; 
+create table lib.name as 
+select a.xxx, a.xxx as xxx, b.* from lib1.name as a, lib2.name as b where      
+input(a.PatentNo,7.)=b.patentno;
+quit;
+</code></pre><p>Above case show when variable Patentno is a string while b.patentno is a number, convert a.Patentno from string to number. (the length of patentno is 7)</p>
+<h2 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h2><pre><code>proc sql; 
+    create table lib.name as 
+select a.*,  b.xxx, b.xx from lib1.xxx as a
+left join lib2.xxx as b 
+on a.xxx=b.xxx;
+quit;
+</code></pre><h2 id="notes"><a href="#notes" class="headerlink" title="notes"></a>notes</h2><p>to merge table, proc sql is more flexible than merge</p>
+<h1 id="copy-dataset"><a href="#copy-dataset" class="headerlink" title="copy dataset"></a>copy dataset</h1><p>   Data lib.newname;<br>    set lib.name;<br>    run;</p>
+<h1 id="convert-some-variable-from-string-to-number"><a href="#convert-some-variable-from-string-to-number" class="headerlink" title="convert some variable from string to number"></a>convert some variable from string to number</h1><pre><code>data lib.newname;
+set lib.newname(rename=(var=var1));
+var = put(var1, 7.);
+drop var1;
+run;
+</code></pre><h1 id="drop-unuseful-info"><a href="#drop-unuseful-info" class="headerlink" title="drop unuseful info"></a>drop unuseful info</h1><h2 id="drop-variable"><a href="#drop-variable" class="headerlink" title="drop variable"></a>drop variable</h2><pre><code>Data lib.newname(drop=xx xx);
+set lib.name;
+run;
+</code></pre><p>or:</p>
+<pre><code>data lib.newname;
+set lib.name;
+drop xxx;
+run;
+</code></pre><h2 id="keep-variable-you-want"><a href="#keep-variable-you-want" class="headerlink" title="keep variable you want"></a>keep variable you want</h2><pre><code>Data lib.name(keep=xxx);
+set lib.name;
+run;
+</code></pre><h2 id="drop-duplicates"><a href="#drop-duplicates" class="headerlink" title="drop duplicates"></a>drop duplicates</h2><pre><code>proc sort data= lib.name nodupkey
+out= lib.newname;
+by xxx(variable);
+run;
+</code></pre><h2 id="drop-missing-data"><a href="#drop-missing-data" class="headerlink" title="drop missing data"></a>drop missing data</h2><pre><code>data lib.name;
+set lib.name;
+if cmiss(xxx) then delete;
+run;
+
+Data lib.name;
+Set lib.name;
+if xxx=&quot; &quot; then delete;
+run;
+</code></pre><h1 id="sort-data"><a href="#sort-data" class="headerlink" title="sort data"></a>sort data</h1><pre><code>PROC SORT data=linkaf10.assign;
+    BY PatentNo;
+RUN;
+</code></pre><h1 id="deal-with-dates-in-SAS"><a href="#deal-with-dates-in-SAS" class="headerlink" title="deal with dates in SAS"></a>deal with dates in SAS</h1><h2 id="keep-obs-after-2010"><a href="#keep-obs-after-2010" class="headerlink" title="keep obs after 2010"></a>keep obs after 2010</h2><p>Data lib.name;<br>set lib.name;<br>year= year(xxx);<br>run;</p>
+<p>Data lib.name;<br>set lib.name;<br>if year &gt; 2010 then delete;<br>run;</p>
+<h1 id="standardize-variables"><a href="#standardize-variables" class="headerlink" title="standardize variables"></a>standardize variables</h1><h2 id="change-to-uppercase"><a href="#change-to-uppercase" class="headerlink" title="change to uppercase"></a>change to uppercase</h2><pre><code>data lib.name;
+set lib.name;
+newvar = upcase(var);
+run;
+</code></pre><h2 id="delete-all-the-punctuation-characters"><a href="#delete-all-the-punctuation-characters" class="headerlink" title="delete all the punctuation characters"></a>delete all the punctuation characters</h2><pre><code>data lib.name;
+set lib.name;
+var1=compress(var,    ,&apos;pd&apos;) 
+run;
+data lib.name;
+set lib.name;
+rename var1 var;
+run;
+</code></pre><h1 id="create-distinct-identification-number"><a href="#create-distinct-identification-number" class="headerlink" title="create distinct identification(number)"></a>create distinct identification(number)</h1><pre><code>data lib.name;
+set lib.name;
+retain var1 2000; *start from 2000;
+var+1;
+run;
+</code></pre><h1 id="export-file"><a href="#export-file" class="headerlink" title="export file"></a>export file</h1><pre><code>proc export data=lib.xxx
+outfile= &quot;path\xxx.csv&quot; 
+dbms=csv replace;
+run;
+</code></pre>
       
     </div>
     
@@ -419,10 +495,10 @@ RUN;
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -443,7 +519,7 @@ RUN;
                 <a href="/archives/">
               
                   <span class="site-state-item-count">22</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -454,7 +530,7 @@ RUN;
               <div class="site-state-item site-state-categories">
                 
                   <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">Kategorien</span>
+                  <span class="site-state-item-name">categories</span>
                 
               </div>
             
@@ -465,7 +541,7 @@ RUN;
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 
               </div>
             
@@ -497,7 +573,7 @@ RUN;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-files"><span class="nav-number">1.</span> <span class="nav-text">Import files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-tables"><span class="nav-number">2.</span> <span class="nav-text">merge tables</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-files"><span class="nav-number">1.</span> <span class="nav-text">Import files</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-import-CSV-file-general-version"><span class="nav-number">1.1.</span> <span class="nav-text">To import CSV file: general version</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#merge-tables"><span class="nav-number">2.</span> <span class="nav-text">merge tables</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#inner-join"><span class="nav-number">2.1.</span> <span class="nav-text">inner join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#left-join"><span class="nav-number">2.2.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notes"><span class="nav-number">2.3.</span> <span class="nav-text">notes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#copy-dataset"><span class="nav-number">3.</span> <span class="nav-text">copy dataset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#convert-some-variable-from-string-to-number"><span class="nav-number">4.</span> <span class="nav-text">convert some variable from string to number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#drop-unuseful-info"><span class="nav-number">5.</span> <span class="nav-text">drop unuseful info</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#drop-variable"><span class="nav-number">5.1.</span> <span class="nav-text">drop variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keep-variable-you-want"><span class="nav-number">5.2.</span> <span class="nav-text">keep variable you want</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop-duplicates"><span class="nav-number">5.3.</span> <span class="nav-text">drop duplicates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop-missing-data"><span class="nav-number">5.4.</span> <span class="nav-text">drop missing data</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sort-data"><span class="nav-number">6.</span> <span class="nav-text">sort data</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deal-with-dates-in-SAS"><span class="nav-number">7.</span> <span class="nav-text">deal with dates in SAS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#keep-obs-after-2010"><span class="nav-number">7.1.</span> <span class="nav-text">keep obs after 2010</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#standardize-variables"><span class="nav-number">8.</span> <span class="nav-text">standardize variables</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#change-to-uppercase"><span class="nav-number">8.1.</span> <span class="nav-text">change to uppercase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-all-the-punctuation-characters"><span class="nav-number">8.2.</span> <span class="nav-text">delete all the punctuation characters</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#create-distinct-identification-number"><span class="nav-number">9.</span> <span class="nav-text">create distinct identification(number)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#export-file"><span class="nav-number">10.</span> <span class="nav-text">export file</span></a></li></ol></div>
             
 
           </div>
@@ -517,7 +593,7 @@ RUN;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -527,7 +603,7 @@ RUN;
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
