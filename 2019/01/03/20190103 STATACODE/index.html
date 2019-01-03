@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="code," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="most useful STATA code here.partial contribution credit to PhD candidate: Sun Junqin, XJTU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STATA CORE CODE">
+<meta property="og:url" content="https://yvonne.github.io/2019/01/03/20190103 STATACODE/index.html">
+<meta property="og:site_name" content="Yvonne's Blog">
+<meta property="og:description" content="most useful STATA code here.partial contribution credit to PhD candidate: Sun Junqin, XJTU">
+<meta property="og:updated_time" content="2019-01-03T06:50:29.576Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STATA CORE CODE">
+<meta name="twitter:description" content="most useful STATA code here.partial contribution credit to PhD candidate: Sun Junqin, XJTU">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yvonne.github.io/2019/01/03/20190103 STATACODE/"/>
+
+
+
+
+
+  <title>STATA CORE CODE | Yvonne's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yvonne's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2019/01/03/20190103 STATACODE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvonne Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yvonne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">STATA CORE CODE</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-03T18:06:00+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>most useful STATA code here.<br>partial contribution credit to PhD candidate: Sun Junqin, XJTU<br><a id="more"></a></p>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><p>use *…</p>
+<h1 id="import-export-file"><a href="#import-export-file" class="headerlink" title="import/export file"></a>import/export file</h1><ul>
+<li>表明在哪个文件夹下做<br>cd path</li>
+<li>导入excel<br>insheet using .csv,clear<br>import excel .xlsx,  firstrow clear *get firstrow as var name</li>
+<li>导出excel<br>export excel .xlsx  //注意无长字符串<br>export delimited using “xxx.csv”  * export csv</li>
+</ul>
+<h1 id="变量处理"><a href="#变量处理" class="headerlink" title="变量处理"></a>变量处理</h1><h2 id="主要变量-winsor-集中处理-处理无规律循环"><a href="#主要变量-winsor-集中处理-处理无规律循环" class="headerlink" title="*-主要变量 winsor 集中处理   //处理无规律循环"></a>*-主要变量 winsor 集中处理   //处理无规律循环</h2><pre><code>local xx &quot;asset revenue saleexpense&quot;   
+    foreach v of varlist `xx&apos;{  
+     winsor `v&apos; , p(0.01) gen(`v&apos;_x)   //按年进行winsor
+     rename `v&apos;  `v&apos;_y
+     rename  `v&apos;_x  `v&apos;
+}  
+</code></pre><h2 id="winsor-单个变量"><a href="#winsor-单个变量" class="headerlink" title="* winsor 单个变量"></a>* winsor 单个变量</h2><pre><code>winsor var, gen(var_1) p(0.01)
+</code></pre><h2 id="append-处理有规律循环"><a href="#append-处理有规律循环" class="headerlink" title="*append      // 处理有规律循环"></a>*append      // 处理有规律循环</h2><pre><code>clear
+forvalues i=1/23 {
+import excel `i&apos;.xlsx,  firstrow clear
+drop in 1/2
+save `i&apos;.dta ,replace
+}
+use 11.dta 
+forval x=12/17 {
+append using `x&apos;.dta
+}
+</code></pre><h2 id="检验独立董事是否连锁"><a href="#检验独立董事是否连锁" class="headerlink" title="*检验独立董事是否连锁"></a>*检验独立董事是否连锁</h2><pre><code>forval i=1/1012 {
+use qq.dta, clear
+keep if mm==`i&apos;
+rename stkcd id
+rename indepname name
+drop mm
+save `i&apos;.dta, replace
+merge 1:m nn using qq.dta
+drop _merge
+keep if name==indepname
+save `i&apos;.dta, replace
+}
+</code></pre><h2 id="变更数据形式"><a href="#变更数据形式" class="headerlink" title="* 变更数据形式"></a>* 变更数据形式</h2><pre><code>reshape long inc, i(id) j(year)   // inc 为变量名
+</code></pre><h2 id="输出结果"><a href="#输出结果" class="headerlink" title="*输出结果"></a><em>*</em>输出结果</h2><pre><code>ereturn list r2_a
+</code></pre><h3 id="输出回归结果"><a href="#输出回归结果" class="headerlink" title="输出回归结果"></a>输出回归结果</h3><pre><code>outreg2 [m52 m53 m51 ] using tab011,  addstat(Adj. R2,     e(r2_a)) bdec(3) tdec(2) title(table1 full sample ) keep(     sum1 CSTR  pro  inter  cash DOMIN STATE size lev )          sortvar( CSTR pro inter) word replace tstat    
+</code></pre><h3 id="输出描述性统计"><a href="#输出描述性统计" class="headerlink" title="输出描述性统计"></a>输出描述性统计</h3><pre><code>logout, save(mytable) word replace: tabstat  , statistics( n MIN  mean median  MAX sd  ) c(s) f(%10.4f)  
+</code></pre><h2 id="spearman和pwcorr相关系数"><a href="#spearman和pwcorr相关系数" class="headerlink" title="* spearman和pwcorr相关系数"></a>* spearman和pwcorr相关系数</h2><pre><code>eststo clear
+sysuse auto, clear
+local vlist &quot;price mpg weight length&quot;
+    local upper
+local lower `vlist&apos;
+expand 2, gen(version)
+foreach v of local vlist {
+    egen rank = rank(`v&apos;) if version == 1
+    replace `v&apos; = rank if version ==1
+    drop rank
+}
+foreach v of local vlist {
+    estpost correlate `v&apos; `lower&apos; if version == 0
+    foreach m in b rho p count {
+        matrix `m&apos; = e(`m&apos;)
+ }
+if &quot;`upper&apos;&quot;!=&quot;&quot; {
+estpost correlate `v&apos; `upper&apos; if version == 1
+    foreach m in b rho p count {
+        matrix `m&apos; = e(`m&apos;), `m&apos;
+     }
+}
+    ereturn post b
+    foreach m in rho p count {
+        quietly estadd matrix `m&apos; = `m&apos;
+ }
+
+    eststo `v&apos;, title(`v&apos;)
+    local lower: list lower - v
+    local upper `upper&apos; `v&apos;
+
+    }
+esttab using 20170220.rtf, replace rtf nonumbers mtitles     noobs not b(a2) 
+logout, save(mytable1) excel replace:pwcorr_a     
+logout, save(mytable2) excel replace:spearman  ,star(0.01)  
+logout, save(mytable3) excel replace:spearman ,star(0.05)
+logout, save(mytable4) excel replace:spearman  ,star(0.1)
+</code></pre><h2 id="配对"><a href="#配对" class="headerlink" title="** 配对"></a>** 配对</h2><pre><code>use 10.dta,clear
+drop if area1==.   //和西部进行配对
+bys year indus plate area1: g exp=_n if area1
+bys year indus plate: egen m=max(exp)
+drop if m==.
+expandcl m if area1!=1,cl(year Stkcd) gen(g)
+bys year Stkcd: replace exp=_n if area1!=1
+bys year indus plate exp: egen r=sum(size*area1)
+g q=abs((size-r)/r) if area1!=1
+bys year indus plate exp: egen u=min(q) if !area1
+drop if u!=q&amp;!area1
+egen mat=group(year indus plate exp)  //划分组
+bysort mat:gen fre1=_N
+drop if fre1==1
+drop exp-fre1
+</code></pre><h2 id="两样本均值检验"><a href="#两样本均值检验" class="headerlink" title="* 两样本均值检验"></a>* 两样本均值检验</h2><pre><code>ttest wTobinQ, by (area1)
+</code></pre><h2 id="两样本中位数检验"><a href="#两样本中位数检验" class="headerlink" title="* 两样本中位数检验"></a>* 两样本中位数检验</h2><pre><code>ranksum lev , by(SOE) 
+</code></pre><h2 id="解决自变量集体定义标签"><a href="#解决自变量集体定义标签" class="headerlink" title="* 解决自变量集体定义标签"></a>* 解决自变量集体定义标签</h2><p><em>（1）将第二行的内容转置，并作为一个变量放入同一个文件数据中，起名，比如叫“varName”；
+</em>（2）运行下面的代码：<br>    local i=0<br>    foreach v of var _all {<br>    local i=<code>i&#39;+1
+    local l= varname in</code>i’<br>    la var <code>v&#39; &quot;</code>l’”<br>    }<br>    drop varname</p>
+<p>*数字文字对应表</p>
+<pre><code>label define repair 1 &quot;好&quot; 2 &quot;较好&quot; 3 &quot;中&quot; 4 &quot;较差&quot; 5 &quot;差&quot; 
+rencode place, replace //文字转数字便于使用 i.place 
+</code></pre><p><em>将数字转化为文字<br>    tostring id ,replace
+</em>将文字转化为数字<br>    destring id, replace</p>
+<pre><code>gen year=substr(time,1,4) //从前往后提取
+gen id= substr(name,-7,6)  // 从最后开始提取
+gen mm=1 if strmatch( Profession ,&quot;*教授*&quot;)  
+gen m333= real(regexr(m6,&quot;分&quot;,&quot;&quot;))  //提取22.3分此类格式数据
+gen m=length(var1)  //变量的长度
+</code></pre><p>*记录ttest</p>
+<pre><code>ttest mkv1,by(disclose)
+ret list  //查看暂元
+logout, save(mytable1) excel replace
+</code></pre><ul>
+<li><p>suest 检验</p>
+<p>  suest m3 m7<br>  test   [m3_mean]revenuechange_dummy_PCM =   [m7_mean]revenuechange_dummy_PCM </p>
+</li>
+</ul>
+<p>*安装最新命令</p>
+<pre><code>ssc install ranktest, replace  //ranktest为ado名
+</code></pre><p>*适合小样本</p>
+<pre><code>twoway(scatter  intangible  liability) (lfit intangible  liability)  //拟合线，lfit为直线，qfit为曲线
+scatter intangible  liability, mlabel(n) mlabpos(6)   // 散点图
+</code></pre><h2 id="循环加返回值"><a href="#循环加返回值" class="headerlink" title="*循环加返回值"></a>*循环加返回值</h2><pre><code>use  &quot;C:\Users\lenovo\Desktop\1.dta&quot; ,clear
+set obs 733441
+gen new=.
+gen n=_n
+gen t=0
+forval i=1/3 {
+forval j=1/3{
+corr x`i&apos; x`j&apos;   
+replace t=t+1 
+replace new=r(rho) if n==t
+replace new=. if `i&apos;&gt;=`j&apos;&amp;n==t
+replace t=t-1 if `i&apos;&gt;=`j&apos;
+}
+}
+</code></pre><p>*便于循环中直接引用上述值</p>
+<pre><code>sort id1
+sum id1
+return list
+global ff=r(max)      //便于下一步直接代入，这一步重点
+forval i=1/$ff {      
+qui reg earning returnwith1 if id1==`i&apos;
+replace afa=_b[_cons] if id1==`i&apos;
+replace beta=_b[returnwith1] if id1==`i&apos;
+}
+esttab e1 f1 g1 h1 ,star(* 0.1 ** 0.05  *** 0.01)  //     在屏幕上整体呈现
+</code></pre><p>*将变量等分</p>
+<pre><code>xtile income5q=income, nquantile(5)
+</code></pre><p>*以逗号进行分列</p>
+<pre><code>split var1,parse(,)destring
+</code></pre><ul>
+<li><p>下载文件</p>
+<p>  copy <a href="http://www.cninfo.com.cn/finalpage/2016-08-30/1202650633.PDF" target="_blank" rel="external">http://www.cninfo.com.cn/finalpage/2016-08-30/1202650633.PDF</a>  F:\stata/650633.pdf ,replace</p>
+</li>
+</ul>
+<p>*单变量DID</p>
+<pre><code>diff var, t(year) p( list)
+
+use test.dta, clear
+levelsof A , clean local(stock)
+foreach m in `stock&apos; {
+capture copy     &quot;http://ichart.finance.yahoo.com/table.csv?s=`m&apos;&amp;a=0&amp;b=1&amp;c=1990&amp;d=11&amp;e=31&amp;f=2014&amp;g=w&amp;ignore=.cs&quot;    `m&apos;.csv, replace
+}
+</code></pre><h2 id="排序"><a href="#排序" class="headerlink" title="*排序"></a>*排序</h2><pre><code>gsort id year -comp  
+areg BTD_new accurals i.year, absorb(id)  //固定效应
+</code></pre><h2 id="算引入后边际效应"><a href="#算引入后边际效应" class="headerlink" title="*算引入后边际效应"></a>*算引入后边际效应</h2><pre><code>xi:areg rd_sale_w  c.Ltrading#c.Llev Llev Ltrading Lmtb     LLNTA   Lprofit Ltangi Lrated Lindus_growth_w Lindus_RDS     i.fyear ,absorb(gvkey) cluster(gvkey) robust
+est store m2
+margins, dydx(*)   //所有的变量
+margins, dydx(Llev) at(Ltrading==1)
+
+clear
+forvalues i=1/1208 {
+use finalfinal.dta,clear
+drop in `i&apos;
+reg ROA1  treatpost politicalnsoe post logasset             wleverage BTM1 SALLGR1 tenure2  Acc1-Acc12                  indus1-indus23 ,robust
+gen cof1=_b[treatpost]
+gen cof2=_se[treatpost]
+gen t=cof1/cof2
+keep in 1
+gen mmmm=`i&apos;
+save `i&apos;.dta ,replace
+}
+use 1.dta,clear
+forval x=2/1208 {
+append using `x&apos;.dta
+} 
+sort t
+</code></pre><h2 id="计算CAR"><a href="#计算CAR" class="headerlink" title="*计算CAR"></a>*计算CAR</h2><p><strong>**</strong>download index <strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></p>
+<pre><code> clear
+ capture mkdir &quot;D:/事件研究/&quot;
+
+ cap which cnindex
+ if _rc!=0{
+    ssc install cnindex
+    }
+
+ cap which cntrade
+ if _rc!=0{
+    ssc install cntrade
+    }
+
+
+ cnindex 000300, path(&quot;D:/事件研究/&quot;)  /*由于为00开头，所以选取深圳成指*/
+ keep date rit 
+ rename rit rmt 
+ sort date
+ save &quot;D:/事件研究/index.dta&quot;,replace
+
+*******Events 
+ clear
+ input stkcd str10 Eventdate
+ 2 &quot;2014-04-14&quot;
+ 600900 &quot;2015-04-14&quot;
+ 28 &quot;2016-04-14&quot;
+      600000 &quot;2016-04-14&quot;
+          601898 &quot;2016-04-14&quot;
+              601988 &quot;2016-04-14&quot;
+                  601666 &quot;2016-04-14&quot;
+
+ end
+
+
+ set matsize 500
+ cap gen Eventdate1=date(Eventdate,&quot;YMD&quot;)
+ drop Eventdate
+ rename Eventdate1 Eventdate
+ format Eventdate %dCY-N-D
+
+ sort stkcd Eventdate
+
+ *******Events Matrix
+ local N=_N
+
+ mkmat stkcd Eventdate, mat(event)
+
+ **save the event into a matrix called event 
+
+ capture postclose event 
+ postfile event id stkcd CAR1 CAR2 CAR3 CAR4 CAR5 CAR6 CAR7 CAR8 CAR9 CAR10 CAR11  CAR12  CAR13 CAR14 using  &quot;D:/事件研究/事件研究.dta&quot;,replace
+
+ forval i=1/`N&apos; {
+ local date = scalar(event[`i&apos;,2])
+ local stkcd = scalar(event[`i&apos;,1])
+ dis `stkcd&apos;
+
+ *生成rit（计算个股日收益率）
+ clear
+ cntrade  `stkcd&apos;, path(&quot;D:/事件研究/&quot;)
+ keep stkcd date rit 
+ destring rit, force replace 
+ replace rit = rit/100
+ drop in 1
+ sort date 
+ merge date using &quot;D:/事件研究/index.dta&quot;, nokeep
+ drop _m 
+ order stkcd date rit rmt 
+
+ preserve 
+ keep if date&lt;`date&apos;
+ gsort -date
+ gen time=-_n
+ keep if time&gt;=-200
+
+ save &quot;D:/事件研究/pre_event.dta&quot;, replace 
+ restore 
+
+ keep if date&gt;=`date&apos;
+ sort date 
+ gen time = _n-1
+ keep if time&lt;=10
+ append using  &quot;D:/事件研究/pre_event.dta&quot;
+ qui reg rit rmt if time&lt;=-10
+ predict abr if time&gt;=-3, r
+
+ keep if time&gt;=-3 
+
+ sort time 
+ gen CAR = sum(abr)
+
+ keep stkcd time CAR
+
+ local CAR1 = CAR[1]
+ local CAR2 = CAR[2]
+ local CAR3 = CAR[3]
+ local CAR4 = CAR[4]
+ local CAR5 = CAR[5]
+ local CAR6 = CAR[6]
+ local CAR7 = CAR[7]
+ local CAR8 = CAR[8]
+ local CAR9 = CAR[9]
+ local CAR10 = CAR[10]
+ local CAR11 = CAR[11]
+ local CAR12 = CAR[12]
+ local CAR13 = CAR[13]
+ local CAR14 = CAR[14]
+
+post event (`i&apos;) (`stkcd&apos;) (`CAR1&apos;) (`CAR2&apos;) (`CAR3&apos;) (`CAR4&apos;) (`CAR5&apos;) (`CAR6&apos;) (`CAR7&apos;) (`CAR8&apos;) ///
+   (`CAR9&apos;) (`CAR10&apos;) (`CAR11&apos;) (`CAR12&apos;) (`CAR13&apos;) (`CAR14&apos;)
+
+}
+postclose event
+
+use &quot;D:/事件研究/事件研究.dta&quot;, clear
+</code></pre><h2 id="分割"><a href="#分割" class="headerlink" title="*分割"></a>*分割</h2><pre><code>split v,parse(/)destring
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/code/" rel="tag"># code</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/01/20190102 SAS CORE CODE/" rel="next" title="SAS CORE CODE">
+                <i class="fa fa-chevron-left"></i> SAS CORE CODE
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yvonne Jia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#import-export-file"><span class="nav-number">2.</span> <span class="nav-text">import/export file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量处理"><span class="nav-number">3.</span> <span class="nav-text">变量处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要变量-winsor-集中处理-处理无规律循环"><span class="nav-number">3.1.</span> <span class="nav-text">*-主要变量 winsor 集中处理   //处理无规律循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#winsor-单个变量"><span class="nav-number">3.2.</span> <span class="nav-text">* winsor 单个变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#append-处理有规律循环"><span class="nav-number">3.3.</span> <span class="nav-text">*append      // 处理有规律循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检验独立董事是否连锁"><span class="nav-number">3.4.</span> <span class="nav-text">*检验独立董事是否连锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变更数据形式"><span class="nav-number">3.5.</span> <span class="nav-text">* 变更数据形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出结果"><span class="nav-number">3.6.</span> <span class="nav-text">*输出结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输出回归结果"><span class="nav-number">3.6.1.</span> <span class="nav-text">输出回归结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述性统计"><span class="nav-number">3.6.2.</span> <span class="nav-text">输出描述性统计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spearman和pwcorr相关系数"><span class="nav-number">3.7.</span> <span class="nav-text">* spearman和pwcorr相关系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配对"><span class="nav-number">3.8.</span> <span class="nav-text">** 配对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两样本均值检验"><span class="nav-number">3.9.</span> <span class="nav-text">* 两样本均值检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两样本中位数检验"><span class="nav-number">3.10.</span> <span class="nav-text">* 两样本中位数检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决自变量集体定义标签"><span class="nav-number">3.11.</span> <span class="nav-text">* 解决自变量集体定义标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环加返回值"><span class="nav-number">3.12.</span> <span class="nav-text">*循环加返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">3.13.</span> <span class="nav-text">*排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算引入后边际效应"><span class="nav-number">3.14.</span> <span class="nav-text">*算引入后边际效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算CAR"><span class="nav-number">3.15.</span> <span class="nav-text">*计算CAR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割"><span class="nav-number">3.16.</span> <span class="nav-text">*分割</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yvonne Jia</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
