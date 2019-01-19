@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="programming,python,tushare,movies," />
+  <meta name="keywords" content="study; accounting," />
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
+<meta name="description" content="我的2019 financial accounting学习计划。MATERIAL: Financial Accounting: Introduction level by UPenn, Coursera, Professor Brian BoucheCharpter 1 part 2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析">
-<meta property="og:url" content="https://yvonne.github.io/2017/01/04/20170104中国电影业票房影响因素回归分析/index.html">
+<meta property="og:title" content="Financial Accounting Introduction">
+<meta property="og:url" content="https://yvonne.github.io/2019/01/19/20190119financialaccounting2/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
-<meta property="og:description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/j0g56mrr51m23ieh18edkeqc/%E5%9B%BE%E7%89%87%201.png">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/etnr435r1yv0u2mbjc2p8v4d/WechatIMG163.jpeg">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/5w9s61apnw0ztc52c16qzdvp/WechatIMG164.jpeg">
-<meta property="og:image" content="http://static.zybuluo.com/windkl/iy1509mcjypx2qov7pp5340i/WechatIMG165.jpeg">
-<meta property="og:updated_time" content="2017-01-04T13:32:52.000Z">
+<meta property="og:description" content="我的2019 financial accounting学习计划。MATERIAL: Financial Accounting: Introduction level by UPenn, Coursera, Professor Brian BoucheCharpter 1 part 2">
+<meta property="og:image" content="https://yvonne.github.io/img/2019010907.jpg">
+<meta property="og:updated_time" content="2019-01-19T06:22:34.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析">
-<meta name="twitter:description" content="本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归">
-<meta name="twitter:image" content="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg">
+<meta name="twitter:title" content="Financial Accounting Introduction">
+<meta name="twitter:description" content="我的2019 financial accounting学习计划。MATERIAL: Financial Accounting: Introduction level by UPenn, Coursera, Professor Brian BoucheCharpter 1 part 2">
+<meta name="twitter:image" content="https://yvonne.github.io/img/2019010907.jpg">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yvonne.github.io/2017/01/04/20170104中国电影业票房影响因素回归分析/"/>
+  <link rel="canonical" href="https://yvonne.github.io/2019/01/19/20190119financialaccounting2/"/>
 
 
 
 
 
-  <title>豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析 | Yvonne's Blog</title>
+  <title>Financial Accounting Introduction | Yvonne's Blog</title>
   
 
 
@@ -237,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2017/01/04/20170104中国电影业票房影响因素回归分析/">
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2019/01/19/20190119financialaccounting2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvonne Jia">
@@ -254,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">豆瓣电影可视化分析下篇：中国电影业票房影响因素回归分析</h1>
+          <h1 class="post-title" itemprop="name headline">Financial Accounting Introduction</h1>
         
 
         <div class="post-meta">
@@ -266,8 +262,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-04T21:32:52+08:00">
-                2017-01-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-19T21:46:26+08:00">
+                2019-01-19
               </time>
             
 
@@ -326,13 +322,26 @@
       
 
       
-        <hr>
-<p>本部分使用EViews软件，对中国电影票房影响因素做了对数线性回归<br><a id="more"></a></p>
-<h2 id="背景阐述"><a href="#背景阐述" class="headerlink" title="背景阐述"></a>背景阐述</h2><p>对于电影票房影响因素的分析，国内外已经成果颇丰，内容主要集中于对单部电影票房影响因素的分析。此次我们是从宏观角度探讨中国爆发性增长的电影总票房的影响因素。2002年6月1日，根据《关于改革电影发行放映机制的实施细则》，全国首批30条电影院线正式成立运营，872家影院、1581块银幕开始以全新的市场主体身份参与竞争。我们选取的数据就是院线制改革后的数据，因距今不算太久远，因此样本数量较少，在此仅作简单的回归分析。</p>
-<h2 id="变量选取"><a href="#变量选取" class="headerlink" title="变量选取"></a>变量选取</h2><p>被解释变量——中国电影票房总收入；解释变量：国民收入水平，中国电影产量（以故事片数量替代），银幕数量，居民消费价格指数。</p>
-<h2 id="基于样本数据的统计性描述"><a href="#基于样本数据的统计性描述" class="headerlink" title="基于样本数据的统计性描述"></a>基于样本数据的统计性描述</h2><p><img src="http://static.zybuluo.com/windkl/2r52x97u9tiakzahombjljwo/WechatIMG162.jpeg" alt="WechatIMG162.jpeg-232.5kB"><br>从上表可以看出，每个变量的标准差都较大，说明14年内增长显著；电影产量的偏度为负，峰度出现在2012年，说明近四年电影产量较2012年下降；其余变量偏度均为正值。<br><img src="http://static.zybuluo.com/windkl/j0g56mrr51m23ieh18edkeqc/%E5%9B%BE%E7%89%87%201.png" alt="图片 1.png-62.2kB"><br>上图是总票房、影院数、银屏数增长率所画的图。可以看出影院和银屏的增长速度从2012年开始放缓；票房在2010-2011年爆炸性增长，影院和银屏在2011-2012年间爆炸性增长；影院和银屏的增长相较票房增长具有滞后性。</p>
-<h2 id="回归分析"><a href="#回归分析" class="headerlink" title="回归分析"></a>回归分析</h2><p>初步设定模型为：ln(Y/X4 )=C1+C2<em>ln(X1/X4)+C3</em>ln(X2)+C4*ln(X3)<br>采用OLS法，利用EViews得到以下结果：<br><img src="http://static.zybuluo.com/windkl/etnr435r1yv0u2mbjc2p8v4d/WechatIMG163.jpeg" alt="WechatIMG163.jpeg-116.5kB"><br>残差分布均匀，说明残差不存在序列自相关。<br><img src="http://static.zybuluo.com/windkl/5w9s61apnw0ztc52c16qzdvp/WechatIMG164.jpeg" alt="WechatIMG164.jpeg-149.2kB"><br>由上表可知Fprob＜0.05，因此整体线性关系显著；判定系数0.994876，说明拟合优度佳；但是Movieproduction这一解释变量未通过t检验，不显著，说明这一解释变量选择不合理，可能存在多重共线性。<br>将数据逐步回归并检验可得：</p>
-<p><img src="http://static.zybuluo.com/windkl/iy1509mcjypx2qov7pp5340i/WechatIMG165.jpeg" alt="WechatIMG165.jpeg-146.4kB"><br>逐步回归结果显示：实际国民收入与银幕数对电影票房的线性影响显著，具体表现为实际国民收入水平每变增加1%，实际电影票房收入就会增加1.299804%，电影银幕数量每增加1%，实际电影票房收入就会增加0.569670%。而中国电影产量对票房影响很小，原因可能是增加的电影由于审批制度、本身质量问题、缺乏营销宣传、进口分账片势力强大等缺乏竞争力的少，因此对票房的增长没有什么贡献。</p>
+        <p>我的2019 financial accounting学习计划。<br>MATERIAL: Financial Accounting: Introduction level by UPenn, Coursera, Professor Brian Bouche<br>Charpter 1 part 2<br><a id="more"></a></p>
+<h1 id="Relic-Spotter-Case"><a href="#Relic-Spotter-Case" class="headerlink" title="Relic Spotter Case"></a>Relic Spotter Case</h1><h2 id="The-accounting-cycle"><a href="#The-accounting-cycle" class="headerlink" title="The accounting cycle"></a>The accounting cycle</h2><p><img src="/img/2019010907.jpg" alt="Alt text"><br>Case:<br>• (1) On April 1, 2012, Girard decided to invest \$200,000 and Park put up \$50,000 to purchase a total of 25,000 shares in the new company. The par value of the shares was $1.00<br>Dr. Cash (+A)                        250,000<br>   Cr. Common Stock (+SE)                25,000<br>   Cr. Additional Paid-in-capital (+SE)  225,000<br>• (2) Lacking the funds for her initial investment, Park borrowed the \$50,000 from the Imperial Bank of Philadelphia on April 1, using her parent’s house as collateral</p>
+<p><strong>Park’s loan of \$50,000 not recorded by Relic Spotter<br>because it is a loan to Park personally, not to the business</strong><br>entity concept: the only thing that should go in a company’s books are transactions for the company, not transactions for the employees. </p>
+<p>• (3) On April 2, Park hired a lawyer to have the business incorporated. Because this was a fairly simple organization, the legal fees were only \$3,900</p>
+<p>Dr. Legal Fee Expense (+E, -SE) 3,900<br>   Cr. Cash (-A)                     3,900<br>*increase expanse, reduce shareholder equity;</p>
+<p>• (5) Park felt that some renovation work would extend the life of the building to 25 years (with an expected salvage value of \$10,000). She ordered the renovation work, costing \$33,000, to begin immediately. The work was completed on May 25, at which time she paid in cash the amount owed for the renovations</p>
+<p>Dr. Building (+A) 33,000<br>    Cr. Cash (-A)33,000       33,000</p>
+<p><strong>ignore the stuff about salvage value and 25 years. Instead, we’re gonna focus on the transaction that happened on May 25th, which is when Park paid the cash.</strong>    </p>
+<p>We only use the inventory account for goods that we buy with the intention of selling as quickly as possible at a markup. We don’t call the metal detectors inventory because we intend to keep them for two years and use them over and over and over and over again to generate rental revenues</p>
+<p>One of the trickier things to pick up in accounting is, when you spend money, do you recognize an asset or do you recognize an expense? In this case, we did an asset, because we’re going to get three years of future benefits from buying the software. </p>
+<p>• (9) On June 30, Park signed a contract with a local advertising agency to provide various forms of advertising for a period of one year. She paid $8,000 upfront for advertising through June 30, 2013</p>
+<p>Dr. Prepaid Advertising (+A) 8,000<br>    Cr. Cash (-A)                 8,000<br>Well, we’re getting a year’s worth of advertising without having to pay any additional cash, that’s an asset. So we’re going to create an asset called prepaid advertising</p>
+<p>• (10) On June 30, Park needed cash to make a payment on the Imperial Bank loan that funded her purchase of Relic Spotter stock. She borrowed $5,000 from Relic Spotter at 10% interest, with the principal and interest due in a lump sum on June 30, 2013<br>Dr. Notes Receivable (+A)   5,000<br>    Cr. Cash (-A)                5,000</p>
+<p>We credit cash for 5,000. So, what is Relic Spotter getting for this cash? What’s the debit? Well, essentially they’re making a loan. That loan is going to be an asset because they’re entitled to receive 5,000 of cash back from Rebecca Park at some point in the future.</p>
+<p>Note that we call it notes receivable. And not accounts receivable. Accounts receivable is only used for customers, when customers owe us money.</p>
+<p>• (12) On June 30, Girard called from St. Tropez to check in on the business. Upon hearing that Relic Spotter only had $47,000 of cash left in the bank, Girard became concerned about his investment. Thinking fast, Park stated that she was so confident of Relic Spotter’s prospects that she was declaring a $0.10 per share dividend, to be paid on August 31 ($2,500). This dividend seemed to reassure Girard<br>Dr. Retained Earnings (-SE)    2,500<br>    Cr. Dividends Payable (+L)      2,500<br>By convention, when a company declares a dividend it takes it out of retained earnings at that point, even if the cash is going to be paid later. And at that point, the owners become creditors because the company is holding their cash until the dividend checks are sent.</p>
+<p>To make sure that the balance sheet equation always stays in balance, we need at least one account that can be either a debit or credit balance.Imagine if we had more liabilities then assets. The only way we could get the balance sheet equation to balance would be with negative stockholders’ equity. And so we make an exception for retained earnings and allow it to have either a debit or credit balance because it’s the one account that makes sure that the balance sheet equation always stays in balance.</p>
+<h1 id="3M-case-study"><a href="#3M-case-study" class="headerlink" title="3M case study"></a>3M case study</h1><p>take care of part II, here’s the big thing management discussion analysis. This is where management tries to explain to the users of the financial statements, what happened during the year. So all the numbers that changed, went up, went down or didn’t change. Tries to provide some kind of explanation so that users can understand the financial statements.</p>
+<p>look at the financial statements and the footnotes first. Come up with my own theories for what happened. And then come and see what management’s saying about it. Just as a reality check of whether I can believe what they’re saying.</p>
+<p>the financial statements are probably not going to have all the information we need. We’re going to have to dive into these footnotes to really learn what we need to learn about the company. And we’re going to be doing a lot as we go through the course, is looking at the details of the footnotes. because that’s where all the action is.</p>
 
       
     </div>
@@ -350,13 +359,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/programming/" rel="tag"># programming</a>
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-            <a href="/tags/tushare/" rel="tag"># tushare</a>
-          
-            <a href="/tags/movies/" rel="tag"># movies</a>
+            <a href="/tags/study-accounting/" rel="tag"># study; accounting</a>
           
         </div>
       
@@ -369,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/04/20170104豆瓣电影可视化分析/" rel="next" title="豆瓣电影可视化分析">
-                <i class="fa fa-chevron-left"></i> 豆瓣电影可视化分析
+              <a href="/2019/01/09/20190109 Financial Accounting /" rel="next" title="Financial Accounting Introduction Charpter I">
+                <i class="fa fa-chevron-left"></i> Financial Accounting Introduction Charpter I
               </a>
             
           </div>
@@ -378,10 +381,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/18/20170118香港初认知/" rel="prev" title="香港初认知">
-                香港初认知 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景阐述"><span class="nav-number">1.</span> <span class="nav-text">背景阐述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量选取"><span class="nav-number">2.</span> <span class="nav-text">变量选取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于样本数据的统计性描述"><span class="nav-number">3.</span> <span class="nav-text">基于样本数据的统计性描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回归分析"><span class="nav-number">4.</span> <span class="nav-text">回归分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Relic-Spotter-Case"><span class="nav-number">1.</span> <span class="nav-text">Relic Spotter Case</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-accounting-cycle"><span class="nav-number">1.1.</span> <span class="nav-text">The accounting cycle</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3M-case-study"><span class="nav-number">2.</span> <span class="nav-text">3M case study</span></a></li></ol></div>
             
 
           </div>
