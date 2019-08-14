@@ -96,23 +96,26 @@
 
 
 
-  <meta name="description" content="R语言基本指令，本文主要focus在读取文件以及数据介绍上">
+  <meta name="description" content="我的第一个爬虫项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R语言学习基本指令读取文件以及数据">
-<meta property="og:url" content="https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/index.html">
+<meta property="og:title" content="爬虫学习用beautifulsoup解析豆瓣电影top250">
+<meta property="og:url" content="https://yvonne.github.io/2019/08/14/20190814爬虫项目一/index.html">
 <meta property="og:site_name" content="Yvonne's Blog">
-<meta property="og:description" content="R语言基本指令，本文主要focus在读取文件以及数据介绍上">
-<meta property="og:updated_time" content="2018-01-11T23:38:40.000Z">
+<meta property="og:description" content="我的第一个爬虫项目">
+<meta property="og:image" content="https://yvonne.github.io/img/2019081401.jpg">
+<meta property="og:image" content="https://yvonne.github.io/img/2019081402.jpg">
+<meta property="og:updated_time" content="2019-08-14T14:56:59.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R语言学习基本指令读取文件以及数据">
-<meta name="twitter:description" content="R语言基本指令，本文主要focus在读取文件以及数据介绍上">
+<meta name="twitter:title" content="爬虫学习用beautifulsoup解析豆瓣电影top250">
+<meta name="twitter:description" content="我的第一个爬虫项目">
+<meta name="twitter:image" content="https://yvonne.github.io/img/2019081401.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/"/>
+  <link rel="canonical" href="https://yvonne.github.io/2019/08/14/20190814爬虫项目一/"/>
 
 
 
@@ -122,7 +125,7 @@
   };
 </script>
 
-  <title>R语言学习基本指令读取文件以及数据 | Yvonne's Blog</title>
+  <title>爬虫学习用beautifulsoup解析豆瓣电影top250 | Yvonne's Blog</title>
   
 
 
@@ -287,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/"/>
+    <link itemprop="mainEntityOfPage" href="https://yvonne.github.io/2019/08/14/20190814爬虫项目一/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvonne Jia"/>
@@ -304,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">R语言学习基本指令读取文件以及数据
+          <h1 class="post-title" itemprop="name headline">爬虫学习用beautifulsoup解析豆瓣电影top250
 
               
             
@@ -330,24 +333,12 @@
                 
               
 
-              <time title="Post created: 2018-01-11 22:31:26" itemprop="dateCreated datePublished" datetime="2018-01-11T22:31:26+08:00">2018-01-11</time>
+              <time title="Post created: 2019-08-14 21:46:26 / Updated at: 22:56:59" itemprop="dateCreated datePublished" datetime="2019-08-14T21:46:26+08:00">2019-08-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-01-12 07:38:40" itemprop="dateModified" datetime="2018-01-12T07:38:40+08:00">2018-01-12</time>
               
             
           </span>
@@ -382,8 +373,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2018/01/11/20180111R语言学习基本指令读取文件以及数据/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/11/20180111R语言学习基本指令读取文件以及数据/" itemprop="commentCount"></span>
+                <a href="/2019/08/14/20190814爬虫项目一/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/14/20190814爬虫项目一/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -411,11 +402,11 @@
       
 
       
-        <p>R语言基本指令，本文主要focus在读取文件以及数据介绍上<br><a id="more"></a><br>觉得自己以后可能生活中很经常会和R语言打交道，并且觉得R在处理数据上很好用并且相对于其他机器语言好学一些，决定好好学习R语言。这篇文章的内容主要也是参考其他人的博客以及coursera上JHU和duke的课程，希望后期能够做到一些简单的实现。学习用的材料用的是中英双语的，所以后面的代码书写会出现两种语言。<br>有用的数据网站：<a href="https://www.kaggle.com/harlfoxem/housesalesprediction" target="_blank" rel="external">https://www.kaggle.com/harlfoxem/housesalesprediction</a> ## housing transactions in King County<br>工具：R Studio</p>
-<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h2><p>主要借鉴的我的计量老师 Rachael Meager的,也是一些编程中的好习惯吧，提醒自己<br>(1) ALWAYS name your variables something descriptive<br>(2) indent your code (use tab)<br>(3) make everything into a function if it can possibly be a function (always make a module)<br>(4) almost never hardcode a number or copy and paste pieces of code<br>(5) check that those canned functions do what you think they do<br> – especially when they encounter NAs<br>6) write unit tests and debug regularly and systematically<br>– asymmetric debugging is a form of fishing</p>
-<p><strong><em>基本指令</em></strong>：</p>
-<h2 id="前期工作，文件读取等"><a href="#前期工作，文件读取等" class="headerlink" title="前期工作，文件读取等"></a>前期工作，文件读取等</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm(list=ls()) #clear workspace first</div><div class="line">getwd( )  # 找到working directory</div><div class="line">setwd(&quot;The path of the data&quot;) #import data</div><div class="line">read.csv(“文件路径”) #读取文件 文件路径可用查看属性方式找到</div></pre></td></tr></table></figure>
-<h2 id="R-with-statistics"><a href="#R-with-statistics" class="headerlink" title="R with statistics"></a>R with statistics</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">***赋值***</div><div class="line">&lt;-,like x&lt;-1,令x=1，此时如果 print(x)，output [1] [1]表明x是一个vector and 5 is the first element</div><div class="line">x &lt;- 1:20 #create a sequence of 1 2 3 4 5 ...20(vector,integer)</div><div class="line">*** creating vectors***</div><div class="line">方式一 c function</div><div class="line">x &lt;- c(0.5,0.6) ##numeric</div><div class="line">x &lt;- c(T,F) ##logical</div><div class="line">x &lt;- c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;) ##character</div><div class="line">x &lt;- c(0+1i,2+2i) ##complex</div><div class="line">## list is a special vector that can contain different classes</div><div class="line">方式二 vector</div><div class="line">x &lt;- vector(&quot;numeric&quot;, length=10)</div><div class="line">***converge data from one class to another***</div><div class="line">as.logical(x)，把x convert to logical class, T or F</div><div class="line">*** creating matrices***</div><div class="line">方法一 m &lt;- matrix(1:6,nrow = 2, ncol =3) ##构造一个两行三列的matrix</div><div class="line">方法二， convert from vectors by adding dim()</div><div class="line">m &lt;- 1:10</div><div class="line">dim(m) &lt;- c(2,5)</div><div class="line"></div><div class="line"></div><div class="line">***判断数据属于哪个class,比如interger</div><div class="line">class()</div></pre></td></tr></table></figure>
+        <p>我的第一个爬虫项目<br><a id="more"></a><br>学习完python基本语法和基本静态网页爬虫之后深感自己需要拿点东西来练手，于是先找到了比较容易的豆瓣入手，最后导出成csv。朋友们可以根据豆瓣电影top250看起来啦。</p>
+<p>主要使用的是request库和beautifulsoup去解析。中间在正则表达式上纠结了很久，网上搜了现成的但是怎么弄都不太对，后来发现是搞错了^这个符号。（敲重点：目前能在谷歌中找到的关于1-10位数字的匹配的正则表达式都不对）</p>
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> csv</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gethtml</span><span class="params">(url)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">                r = requests.get(url, timeout=<span class="number">30</span>)</div><div class="line">                r.raise_for_status()</div><div class="line">                r.encoding = r.apparent_encoding</div><div class="line">                <span class="keyword">return</span> r.text</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">                print(<span class="string">'error'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getinfo</span><span class="params">(html)</span>:</span></div><div class="line">        list = []</div><div class="line">        soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> soup.find_all(attrs = &#123;<span class="string">'class'</span>:<span class="string">'item'</span>&#125;):</div><div class="line">                <span class="comment">#get the title first</span></div><div class="line">                <span class="keyword">try</span>:</div><div class="line">                        title = item.find_all(attrs=&#123;<span class="string">'class'</span>:<span class="string">'title'</span>&#125;)[<span class="number">0</span>].text</div><div class="line">                    <span class="comment">#get rating number</span></div><div class="line">                    ratings = item.find_all(attrs=&#123;<span class="string">'class'</span>:<span class="string">'rating_num'</span>&#125;)[<span class="number">0</span>].text</div><div class="line">                    <span class="comment">#get numbers of people rating</span></div><div class="line">                    star = item.find_all(attrs=&#123;<span class="string">'class'</span>:<span class="string">'star'</span>&#125;)[<span class="number">0</span>].get_text()</div><div class="line">                    pat = re.compile(<span class="string">r'[0-9]\d&#123;1,12&#125;'</span>)</div><div class="line">                    ratingN = pat.search(star)[<span class="number">0</span>]</div><div class="line">                    tup = (title,ratings,ratingN)</div><div class="line">                    list.append(tup)</div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">    <span class="keyword">return</span> list</div><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_to_csv</span><span class="params">(list)</span>:</span>       </div><div class="line">        <span class="keyword">with</span> open(<span class="string">"topmovies.csv"</span>,<span class="string">"a"</span>)  <span class="keyword">as</span> f:</div><div class="line">                writer=csv.writer(f, delimiter=<span class="string">","</span>,lineterminator=<span class="string">"\r\n"</span>) </div><div class="line">                writer.writerows(list)</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    start_url = <span class="string">"https://movie.douban.com/top250?start=&#123;0&#125;&amp;filter="</span></div><div class="line">    depth = <span class="number">10</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(depth):</div><div class="line">            url = start_url.format(i*<span class="number">25</span>)</div><div class="line">            html = gethtml(url)</div><div class="line">            list = getinfo(html)</div><div class="line">            write_to_csv(list)</div><div class="line">main()</div></pre></td></tr></table></figure>
+<p>最后的csv截取：<br><img src="/img/2019081401.jpg" alt="Alt text"><br><img src="/img/2019081402.jpg" alt="Alt text"><br>看起来top10的电影我只看了6/7部啊。<br>喜欢的初恋这件小事也上榜了哈哈</p>
 
       
     </div>
@@ -439,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/R/" rel="tag"># R</a>
+            <a href="/tags/study-python/" rel="tag"># study; python</a>
           
         </div>
       
@@ -452,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/06/20180105 2017年终总结/" rel="next" title="2017年终总结">
-                <i class="fa fa-chevron-left"></i> 2017年终总结
+              <a href="/2019/03/05/20190305长洲岛之旅/" rel="next" title="香港远足记——长洲岛">
+                <i class="fa fa-chevron-left"></i> 香港远足记——长洲岛
               </a>
             
           </div>
@@ -461,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/17/20180117 R语言，data/" rel="prev" title="R语言，data">
-                R语言，data <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -516,17 +503,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -658,23 +636,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面的话"><span class="nav-number">1.</span> <span class="nav-text">写在前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期工作，文件读取等"><span class="nav-number">2.</span> <span class="nav-text">前期工作，文件读取等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-with-statistics"><span class="nav-number">3.</span> <span class="nav-text">R with statistics</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -821,9 +782,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://yvonne.github.io/2018/01/11/20180111R语言学习基本指令读取文件以及数据/";
-    this.page.identifier = "2018/01/11/20180111R语言学习基本指令读取文件以及数据/";
-    this.page.title = 'R语言学习基本指令读取文件以及数据';
+    this.page.url = "https://yvonne.github.io/2019/08/14/20190814爬虫项目一/";
+    this.page.identifier = "2019/08/14/20190814爬虫项目一/";
+    this.page.title = '爬虫学习用beautifulsoup解析豆瓣电影top250';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
